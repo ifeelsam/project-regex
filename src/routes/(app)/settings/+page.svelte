@@ -23,4 +23,13 @@
       protections or DRM.
     </p>
   </div>
+  <div class="rounded-[var(--radius-card)] border border-border bg-bg-raised p-5">
+    <h2 class="text-sm font-medium">Developer</h2>
+    <p class="mt-1 text-sm text-text-muted">
+      Temporary screen for exercising the local data layer.
+    </p>
+    <a href="/debug/" class="mt-4 inline-block text-sm text-accent hover:underline">
+      Open data debug screen
+    </a>
+  </div>
 </section>

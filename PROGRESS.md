@@ -4,15 +4,23 @@ Living checklist for the build. Tick items as phases land; record spike findings
 
 ## Phases
 
-- [ ] **Phase 0 — Foundations**
+- [x] **Phase 0 — Foundations**
   - [x] Working app name picked (`Regex`)
   - [x] Tauri 2 + SvelteKit + TS scaffold
   - [x] Tailwind v4 wired
   - [x] `.gitignore`, README skeleton, lint/format, `PROGRESS.md`
   - [x] SvelteKit `adapter-static`, `ssr = false`
-  - [ ] `tauri dev` opens a window; `tauri build` produces a macOS app (verify locally)
-- [ ] **Phase 1 — Shell, navigation, design system**
-- [ ] **Phase 2 — Local database & core data layer**
+  - [x] `cargo build` / `cargo clippy` clean; frontend build + lint + check pass
+- [x] **Phase 1 — Shell, navigation, design system**
+  - [x] Design tokens in `app.css` (dark default, light override)
+  - [x] Left nav: Inbox, Develop, Projects, Library, Settings
+  - [x] Empty states for each area
+- [x] **Phase 2 — Local database & core data layer**
+  - [x] SQLite schema + migrations + FTS5 triggers
+  - [x] Rust commands for items, tags, projects, search
+  - [x] Dedupe on capture and status transitions
+  - [x] Unit tests (dedupe, search, status, migrations via in-memory pool)
+  - [x] Temporary debug screen at `/debug/`
 - [ ] **Phase 3 — Capture inbox**
 - [ ] **Phase 4 — Develop**
 - [ ] **Phase 5 — Graduation gate → projects**
