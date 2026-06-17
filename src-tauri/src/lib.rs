@@ -5,6 +5,9 @@
 
 mod commands;
 mod db;
+mod enrich;
+mod metadata;
+mod transcripts;
 
 use sqlx::SqlitePool;
 use tauri::Manager;
@@ -51,6 +54,7 @@ pub fn run() {
         .invoke_handler(tauri::generate_handler![
             commands::ping,
             commands::capture_item,
+            commands::list_inbox_items,
             commands::list_items,
             commands::get_item,
             commands::update_item_note,
@@ -64,6 +68,8 @@ pub fn run() {
             commands::graduate_item,
             commands::detect_platform,
             commands::default_captured_on,
+            enrich::enrich_item,
+            enrich::add_auto_transcript,
         ])
         .run(tauri::generate_context!())
         .expect("error while running the Regex application");

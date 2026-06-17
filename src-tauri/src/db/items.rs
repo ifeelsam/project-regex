@@ -2,11 +2,15 @@ use sqlx::SqlitePool;
 use uuid::Uuid;
 
 use super::error::DbResult;
-use super::models::{
-    CaptureItemInput, CaptureItemResult, Item, ItemStatus, Platform, now_iso,
-};
+use super::models::{CaptureItemInput, CaptureItemResult, Item, ItemStatus, Platform, Tag, now_iso};
 use super::status::assert_transition;
 use super::tags::{get_item_tags, set_item_tags};
+
+#[derive(serde::Serialize)]
+pub struct ItemWithTags {
+    pub item: Item,
+    pub tags: Vec<Tag>,
+}
 
 pub async fn find_by_url(pool: &SqlitePool, url: &str) -> DbResult<Option<Item>> {
     let item = sqlx::query_as::<_, Item>("SELECT * FROM items WHERE url = ?")
@@ -22,6 +26,19 @@ pub async fn get(pool: &SqlitePool, id: &str) -> DbResult<Option<Item>> {
         .fetch_optional(pool)
         .await?;
     Ok(item)
+}
+
+pub async fn list_with_tags(
+    pool: &SqlitePool,
+    status: Option<ItemStatus>,
+) -> DbResult<Vec<ItemWithTags>> {
+    let items = list(pool, status).await?;
+    let mut rows = Vec::with_capacity(items.len());
+    for item in items {
+        let tags = get_item_tags(pool, &item.id).await?;
+        rows.push(ItemWithTags { item, tags });
+    }
+    Ok(rows)
 }
 
 pub async fn list(pool: &SqlitePool, status: Option<ItemStatus>) -> DbResult<Vec<Item>> {
@@ -96,7 +113,6 @@ pub async fn update_note(pool: &SqlitePool, id: &str, note: &str) -> DbResult<It
         .ok_or_else(|| super::error::DbError::Message("item not found".into()))
 }
 
-#[allow(dead_code)]
 pub async fn update_metadata(
     pool: &SqlitePool,
     id: &str,

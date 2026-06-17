@@ -21,7 +21,10 @@ Living checklist for the build. Tick items as phases land; record spike findings
   - [x] Dedupe on capture and status transitions
   - [x] Unit tests (dedupe, search, status, migrations via in-memory pool)
   - [x] Temporary debug screen at `/debug/`
-- [ ] **Phase 3 — Capture inbox**
+- [x] **Phase 3 — Capture inbox**
+  - [x] Capture form with note-first flow and thought mode
+  - [x] Background metadata + auto transcript enrichment
+  - [x] Inbox list with instant search and tag filters
 - [ ] **Phase 4 — Develop**
 - [ ] **Phase 5 — Graduation gate → projects**
 - [ ] **Phase 6 — Breakdown engine (desktop)**

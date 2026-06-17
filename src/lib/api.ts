@@ -50,6 +50,11 @@ export type CaptureItemResult = {
   tags: Tag[];
 };
 
+export type ItemWithTags = {
+  item: Item;
+  tags: Tag[];
+};
+
 export type SearchHit = {
   item: Item;
   rank: number;
@@ -76,6 +81,9 @@ async function call<T>(command: string, args?: Record<string, unknown>): Promise
 export const api = {
   ping: () => call<string>('ping'),
   captureItem: (input: CaptureItemInput) => call<CaptureItemResult>('capture_item', { input }),
+  enrichItem: (itemId: string) => call<void>('enrich_item', { item_id: itemId }),
+  listInboxItems: (status?: ItemStatus) =>
+    call<ItemWithTags[]>('list_inbox_items', { status: status ?? null }),
   listItems: (status?: ItemStatus) => call<Item[]>('list_items', { status: status ?? null }),
   getItem: (id: string) => call<Item | null>('get_item', { id }),
   updateItemNote: (id: string, note: string) => call<Item>('update_item_note', { id, note }),

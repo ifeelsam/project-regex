@@ -22,6 +22,14 @@ pub async fn capture_item(
 }
 
 #[tauri::command]
+pub async fn list_inbox_items(
+    state: State<'_, AppState>,
+    status: Option<ItemStatus>,
+) -> Result<Vec<db::items::ItemWithTags>, DbError> {
+    db::items::list_with_tags(&state.pool, status).await
+}
+
+#[tauri::command]
 pub async fn list_items(
     state: State<'_, AppState>,
     status: Option<ItemStatus>,
