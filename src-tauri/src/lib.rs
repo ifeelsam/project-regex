@@ -3,6 +3,16 @@
 //! All business logic lives here so it can be shared by the desktop binary and
 //! the mobile entry points, and unit-tested without a running webview.
 
+mod commands;
+mod db;
+
+use sqlx::SqlitePool;
+use tauri::Manager;
+
+pub struct AppState {
+    pub pool: SqlitePool,
+}
+
 #[cfg_attr(mobile, tauri::mobile_entry_point)]
 pub fn run() {
     tracing_subscriber::fmt()
@@ -21,13 +31,40 @@ pub fn run() {
     let builder = builder.plugin(tauri_plugin_global_shortcut::Builder::new().build());
 
     builder
-        .invoke_handler(tauri::generate_handler![ping])
+        .setup(|app| {
+            let handle = app.handle().clone();
+            tauri::async_runtime::block_on(async move {
+                let path = handle
+                    .path()
+                    .app_data_dir()
+                    .expect("app data directory unavailable")
+                    .join("regex.db");
+
+                let pool = db::connect(&path)
+                    .await
+                    .expect("failed to open the local database");
+
+                handle.manage(AppState { pool });
+            });
+            Ok(())
+        })
+        .invoke_handler(tauri::generate_handler![
+            commands::ping,
+            commands::capture_item,
+            commands::list_items,
+            commands::get_item,
+            commands::update_item_note,
+            commands::update_item_status,
+            commands::delete_item,
+            commands::list_tags,
+            commands::set_item_tags,
+            commands::search_items,
+            commands::create_project,
+            commands::list_projects,
+            commands::graduate_item,
+            commands::detect_platform,
+            commands::default_captured_on,
+        ])
         .run(tauri::generate_context!())
         .expect("error while running the Regex application");
-}
-
-/// Trivial liveness command used while wiring up the shell.
-#[tauri::command]
-fn ping() -> &'static str {
-    "pong"
 }
