@@ -12,6 +12,7 @@ export type Item = {
   title: string;
   author: string;
   note: string;
+  develop_note: string;
   thumbnail_path: string | null;
   status: ItemStatus;
   project_id: string | null;
@@ -62,6 +63,12 @@ export type SearchHit = {
   tags: Tag[];
 };
 
+export type IdeaDetail = {
+  item: Item;
+  tags: Tag[];
+  references: ItemWithTags[];
+};
+
 function humanError(error: unknown): string {
   if (typeof error === 'string') return error;
   if (error && typeof error === 'object' && 'message' in error) {
@@ -84,6 +91,14 @@ export const api = {
   enrichItem: (itemId: string) => call<void>('enrich_item', { item_id: itemId }),
   listInboxItems: (status?: ItemStatus) =>
     call<ItemWithTags[]>('list_inbox_items', { status: status ?? null }),
+  listDevelopItems: () => call<ItemWithTags[]>('list_develop_items'),
+  getIdeaDetail: (id: string) => call<IdeaDetail>('get_idea_detail', { id }),
+  updateDevelopNote: (id: string, developNote: string) =>
+    call<Item>('update_develop_note', { id, develop_note: developNote }),
+  addItemReference: (ideaId: string, referenceId: string) =>
+    call<void>('add_item_reference', { idea_id: ideaId, reference_id: referenceId }),
+  removeItemReference: (ideaId: string, referenceId: string) =>
+    call<void>('remove_item_reference', { idea_id: ideaId, reference_id: referenceId }),
   listItems: (status?: ItemStatus) => call<Item[]>('list_items', { status: status ?? null }),
   getItem: (id: string) => call<Item | null>('get_item', { id }),
   updateItemNote: (id: string, note: string) => call<Item>('update_item_note', { id, note }),

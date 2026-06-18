@@ -30,6 +30,48 @@ pub async fn list_inbox_items(
 }
 
 #[tauri::command]
+pub async fn list_develop_items(
+    state: State<'_, AppState>,
+) -> Result<Vec<db::items::ItemWithTags>, DbError> {
+    db::ideas::list_develop(&state.pool).await
+}
+
+#[tauri::command]
+pub async fn get_idea_detail(
+    state: State<'_, AppState>,
+    id: String,
+) -> Result<db::ideas::IdeaDetail, DbError> {
+    db::ideas::get_detail(&state.pool, &id).await
+}
+
+#[tauri::command]
+pub async fn update_develop_note(
+    state: State<'_, AppState>,
+    id: String,
+    develop_note: String,
+) -> Result<Item, DbError> {
+    db::ideas::update_develop_note(&state.pool, &id, &develop_note).await
+}
+
+#[tauri::command]
+pub async fn add_item_reference(
+    state: State<'_, AppState>,
+    idea_id: String,
+    reference_id: String,
+) -> Result<(), DbError> {
+    db::references::add(&state.pool, &idea_id, &reference_id).await
+}
+
+#[tauri::command]
+pub async fn remove_item_reference(
+    state: State<'_, AppState>,
+    idea_id: String,
+    reference_id: String,
+) -> Result<(), DbError> {
+    db::references::remove(&state.pool, &idea_id, &reference_id).await
+}
+
+#[tauri::command]
 pub async fn list_items(
     state: State<'_, AppState>,
     status: Option<ItemStatus>,

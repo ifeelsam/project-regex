@@ -76,8 +76,8 @@ pub async fn capture(pool: &SqlitePool, input: CaptureItemInput) -> DbResult<Cap
 
     sqlx::query(
         r#"
-        INSERT INTO items (id, url, platform, title, author, note, status, captured_at, captured_on)
-        VALUES (?, ?, ?, ?, ?, ?, 'inbox', ?, ?)
+        INSERT INTO items (id, url, platform, title, author, note, develop_note, status, captured_at, captured_on)
+        VALUES (?, ?, ?, ?, ?, ?, '', 'inbox', ?, ?)
         "#,
     )
     .bind(&id)

@@ -64,6 +64,7 @@ pub struct Item {
     pub title: String,
     pub author: String,
     pub note: String,
+    pub develop_note: String,
     pub thumbnail_path: Option<String>,
     pub status: ItemStatus,
     pub project_id: Option<String>,
