@@ -3,9 +3,11 @@
   import { openUrl } from '@tauri-apps/plugin-opener';
   import { onMount } from 'svelte';
   import { page } from '$app/stores';
-  import { api, type ProjectDetail, type ProjectFormat } from '$lib/api';
+  import { api, type ProjectDetail, type ProjectFormat, type Asset } from '$lib/api';
+  import BreakdownPanel from '$lib/components/BreakdownPanel.svelte';
 
   let detail = $state<ProjectDetail | null>(null);
+  let assets = $state<Asset[]>([]);
   let loading = $state(true);
   let message = $state('');
 
@@ -31,6 +33,7 @@
     loading = true;
     try {
       detail = await api.getProjectDetail(projectId);
+      assets = await api.listProjectAssets(projectId);
     } catch (error) {
       message = error instanceof Error ? error.message : 'Could not load this project.';
     } finally {
@@ -74,6 +77,36 @@
         <p class="text-sm leading-relaxed text-text-muted">{detail.project.brief}</p>
       {/if}
     </header>
+
+    {#if projectId}
+      <BreakdownPanel
+        {projectId}
+        itemId={detail.primary_item.item.id}
+        oncomplete={load}
+      />
+    {/if}
+
+    {#if assets.length}
+      <section class="rounded-[var(--radius-card)] border border-border bg-bg-raised p-5">
+        <h3 class="text-sm font-medium">Assets</h3>
+        <p class="mt-1 text-sm text-text-muted">
+          {assets.length} extracted asset{assets.length === 1 ? '' : 's'} from breakdown.
+        </p>
+        <ul class="mt-3 space-y-2" role="list">
+          {#each assets.slice(0, 8) as asset (asset.id)}
+            <li class="flex items-center justify-between gap-3 text-sm">
+              <span>{asset.label || asset.type}</span>
+              <span class="text-xs text-text-faint">{asset.type}</span>
+            </li>
+          {/each}
+        </ul>
+        {#if assets.length > 8}
+          <a href="/library/" class="mt-3 inline-block text-xs text-accent hover:underline"
+            >View all in library</a
+          >
+        {/if}
+      </section>
+    {/if}
 
     <section class="rounded-[var(--radius-card)] border border-border bg-bg-raised p-5">
       <h3 class="text-sm font-medium">Graduated idea</h3>

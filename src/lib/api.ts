@@ -48,6 +48,49 @@ export type ProjectDetail = {
   references: ItemWithTags[];
 };
 
+export type BreakdownStatus = 'queued' | 'running' | 'done' | 'failed';
+
+export type Breakdown = {
+  id: string;
+  item_id: string;
+  project_id: string | null;
+  status: BreakdownStatus;
+  error: string | null;
+  created_at: string;
+  finished_at: string | null;
+};
+
+export type AssetType = 'frame' | 'clip' | 'audio' | 'transcript' | 'structure';
+
+export type Asset = {
+  id: string;
+  breakdown_id: string | null;
+  project_id: string | null;
+  item_id: string | null;
+  type: AssetType;
+  path: string;
+  start_ms: number | null;
+  end_ms: number | null;
+  label: string;
+  meta: string;
+  created_at: string;
+};
+
+export type BreakdownProgress = {
+  breakdown_id: string;
+  project_id: string | null;
+  item_id: string;
+  step: string;
+  progress: number;
+  message: string;
+};
+
+export type MediaToolsStatus = {
+  yt_dlp: boolean;
+  ffmpeg: boolean;
+  whisper: boolean;
+};
+
 export type CaptureItemInput = {
   url?: string | null;
   platform: Platform;
@@ -135,6 +178,19 @@ export const api = {
       brief,
       format
     }),
+  startBreakdown: (itemId: string, projectId: string, personalUseConfirmed: boolean) =>
+    call<Breakdown>('start_breakdown', {
+      item_id: itemId,
+      project_id: projectId,
+      personal_use_confirmed: personalUseConfirmed
+    }),
+  cancelBreakdown: (breakdownId: string) =>
+    call<boolean>('cancel_breakdown', { breakdown_id: breakdownId }),
+  listProjectBreakdowns: (projectId: string) =>
+    call<Breakdown[]>('list_project_breakdowns', { project_id: projectId }),
+  listProjectAssets: (projectId: string) =>
+    call<Asset[]>('list_project_assets', { project_id: projectId }),
+  checkMediaTools: () => call<MediaToolsStatus>('check_media_tools'),
   detectPlatform: (url: string) => call<Platform>('detect_platform', { url }),
   defaultCapturedOn: () => call<CapturedOn>('default_captured_on')
 };
