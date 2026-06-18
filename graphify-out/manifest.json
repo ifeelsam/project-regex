@@ -1,0 +1,362 @@
+{
+  "/Users/sam/Projects/project-regex/svelte.config.js": {
+    "mtime": 1781719635.8536031,
+    "hash": "d6933fec306abc258767ceb306136aa1"
+  },
+  "/Users/sam/Projects/project-regex/eslint.config.js": {
+    "mtime": 1781719693.1246634,
+    "hash": "62547563c670fdfff90fdf3e4735ce64"
+  },
+  "/Users/sam/Projects/project-regex/vite.config.ts": {
+    "mtime": 1781725120.0210917,
+    "hash": "b9c0d1f116fd39d5f2a115f3f002c6dd"
+  },
+  "/Users/sam/Projects/project-regex/src-tauri/build.rs": {
+    "mtime": 1781719749.687642,
+    "hash": "48af8f08e39b73562f866d3a50b2e88a"
+  },
+  "/Users/sam/Projects/project-regex/src-tauri/migrations/001_init.sql": {
+    "mtime": 1781728010.2287712,
+    "hash": "effba7d01873567208018a3665eb322e"
+  },
+  "/Users/sam/Projects/project-regex/src-tauri/src/lib.rs": {
+    "mtime": 1781729068.5768988,
+    "hash": "f9060cd34ec872e2cb47c1a928b96757"
+  },
+  "/Users/sam/Projects/project-regex/src-tauri/src/enrich.rs": {
+    "mtime": 1781729086.7715614,
+    "hash": "bf637f14e622b7f02c1348cbc40dec52"
+  },
+  "/Users/sam/Projects/project-regex/src-tauri/src/commands.rs": {
+    "mtime": 1781729068.0661662,
+    "hash": "299fe4e50ee5a2d06c8fc86126af0948"
+  },
+  "/Users/sam/Projects/project-regex/src-tauri/src/main.rs": {
+    "mtime": 1781719773.3793297,
+    "hash": "3fac281d5846d7c2fa1f9983411608b1"
+  },
+  "/Users/sam/Projects/project-regex/src-tauri/src/transcripts/mod.rs": {
+    "mtime": 1781729048.557276,
+    "hash": "61ff249b47580ba2eeab733af24f65da"
+  },
+  "/Users/sam/Projects/project-regex/src-tauri/src/db/error.rs": {
+    "mtime": 1781728108.168821,
+    "hash": "bac14f285089b6024ab2346406ef59bf"
+  },
+  "/Users/sam/Projects/project-regex/src-tauri/src/db/models.rs": {
+    "mtime": 1781728213.8508632,
+    "hash": "505bde6ba3431f9a9ddb7600851ff6e4"
+  },
+  "/Users/sam/Projects/project-regex/src-tauri/src/db/tags.rs": {
+    "mtime": 1781728058.530561,
+    "hash": "6418e7aaa4d597d77086923782e80a22"
+  },
+  "/Users/sam/Projects/project-regex/src-tauri/src/db/items.rs": {
+    "mtime": 1781729071.33377,
+    "hash": "79d7043599fc286b9696b241ddc5ef55"
+  },
+  "/Users/sam/Projects/project-regex/src-tauri/src/db/mod.rs": {
+    "mtime": 1781728069.9292488,
+    "hash": "4237cd97e2857fb0805dd6370b2781aa"
+  },
+  "/Users/sam/Projects/project-regex/src-tauri/src/db/status.rs": {
+    "mtime": 1781728038.5315628,
+    "hash": "8b574e41696f66ff5f2da500afbd1399"
+  },
+  "/Users/sam/Projects/project-regex/src-tauri/src/db/pool.rs": {
+    "mtime": 1781728030.8178933,
+    "hash": "960d774905f34aef828fbbbcaad01b9f"
+  },
+  "/Users/sam/Projects/project-regex/src-tauri/src/db/projects.rs": {
+    "mtime": 1781728063.1115317,
+    "hash": "57c382ee0d6e9a1bad4ce5ed09f3e3b4"
+  },
+  "/Users/sam/Projects/project-regex/src-tauri/src/db/search.rs": {
+    "mtime": 1781728228.004564,
+    "hash": "f5e9aecf356619845e7fe3bafbce8095"
+  },
+  "/Users/sam/Projects/project-regex/src-tauri/src/metadata/mod.rs": {
+    "mtime": 1781729048.5552058,
+    "hash": "e6bfd23b41ec0d3e79dbe55b1a1814ff"
+  },
+  "/Users/sam/Projects/project-regex/src/lib/nav.ts": {
+    "mtime": 1781725071.9832773,
+    "hash": "1956c306c19f4f620a9a0ebd6ee349d1"
+  },
+  "/Users/sam/Projects/project-regex/src/lib/theme.svelte.ts": {
+    "mtime": 1781725073.3588102,
+    "hash": "e3e6c7e40a262c10d2fbe8cfb38852dc"
+  },
+  "/Users/sam/Projects/project-regex/src/lib/api.ts": {
+    "mtime": 1781729124.1714983,
+    "hash": "a5b0639e68c0f890b6416f5fda725247"
+  },
+  "/Users/sam/Projects/project-regex/src/lib/components/EmptyState.svelte": {
+    "mtime": 1781725075.0408087,
+    "hash": "68e9a5d15db6b630a8e868b94407503f"
+  },
+  "/Users/sam/Projects/project-regex/src/lib/components/InboxItemCard.svelte": {
+    "mtime": 1781729129.4650307,
+    "hash": "51077b8bbf7cbd56df8b53c7b395951c"
+  },
+  "/Users/sam/Projects/project-regex/src/lib/components/Sidebar.svelte": {
+    "mtime": 1781725077.4785104,
+    "hash": "dc8dfe77ed6585115cfff3aea761baad"
+  },
+  "/Users/sam/Projects/project-regex/src/lib/components/Shell.svelte": {
+    "mtime": 1781725079.4857428,
+    "hash": "37b82e05bb37ae8192f7d14ab7118dea"
+  },
+  "/Users/sam/Projects/project-regex/src/lib/components/CaptureForm.svelte": {
+    "mtime": 1781729129.4514806,
+    "hash": "ca4bb6b6932360c172682a4b50b03740"
+  },
+  "/Users/sam/Projects/project-regex/src/routes/+layout.ts": {
+    "mtime": 1781719704.5851502,
+    "hash": "e3a43a1484ee23541ceb6d602b754c18"
+  },
+  "/Users/sam/Projects/project-regex/src/routes/+page.ts": {
+    "mtime": 1781725081.614097,
+    "hash": "ee1e7f5f8ef8aaad9b34d6991eb2971a"
+  },
+  "/Users/sam/Projects/project-regex/src/routes/+layout.svelte": {
+    "mtime": 1781719711.580788,
+    "hash": "9a4cdf2ff1df514dec994b584a1a1d6a"
+  },
+  "/Users/sam/Projects/project-regex/src/routes/(app)/+layout.svelte": {
+    "mtime": 1781725104.41994,
+    "hash": "85331ce49e157a9c426652d0eca6dff5"
+  },
+  "/Users/sam/Projects/project-regex/src/routes/(app)/settings/+page.svelte": {
+    "mtime": 1781728262.5098257,
+    "hash": "5fbbe7961642231ba50473106c7458da"
+  },
+  "/Users/sam/Projects/project-regex/src/routes/(app)/develop/+page.svelte": {
+    "mtime": 1781725083.996298,
+    "hash": "a72032707808cd45ac70b69fa3e0f6b2"
+  },
+  "/Users/sam/Projects/project-regex/src/routes/(app)/inbox/+page.svelte": {
+    "mtime": 1781729135.3651507,
+    "hash": "ecf2d41a497eac404f0ec677889fdaac"
+  },
+  "/Users/sam/Projects/project-regex/src/routes/(app)/projects/+page.svelte": {
+    "mtime": 1781725084.9675229,
+    "hash": "5efee7b6972a511e0fcef8c33d54a2ee"
+  },
+  "/Users/sam/Projects/project-regex/src/routes/(app)/library/+page.svelte": {
+    "mtime": 1781725085.8962936,
+    "hash": "103ddd52cb179c089b21aae78c1136f4"
+  },
+  "/Users/sam/Projects/project-regex/src/routes/(app)/debug/+page.svelte": {
+    "mtime": 1781728262.500929,
+    "hash": "c221e6e80345d7c3405c30811370e492"
+  },
+  "/Users/sam/Projects/project-regex/PROGRESS.md": {
+    "mtime": 1781729136.3813047,
+    "hash": "6e583bb26a3b8c3f42b704706ce1cdd2"
+  },
+  "/Users/sam/Projects/project-regex/README.md": {
+    "mtime": 1781719858.180989,
+    "hash": "2d51280dfbe8e6b49acb90f75855fa63"
+  },
+  "/Users/sam/Projects/project-regex/src/app.html": {
+    "mtime": 1781719661.5752783,
+    "hash": "7b44723c11d44766efe10ef43b43a6f9"
+  },
+  "/Users/sam/Projects/project-regex/static/favicon.png": {
+    "mtime": 1781720005.9391673,
+    "hash": "2fb603d166c7efcbc56f4d9e72a6256b"
+  },
+  "/Users/sam/Projects/project-regex/src-tauri/icons/icon.png": {
+    "mtime": 1781719998.4411724,
+    "hash": "6cf2ec3ac3bd63c1a2d9fcba2d985636"
+  },
+  "/Users/sam/Projects/project-regex/src-tauri/icons/Square30x30Logo.png": {
+    "mtime": 1781719998.2505426,
+    "hash": "e1d52eb2f852a490d5701ed0e45550b3"
+  },
+  "/Users/sam/Projects/project-regex/src-tauri/icons/Square150x150Logo.png": {
+    "mtime": 1781719998.262828,
+    "hash": "585035458ba0fa77b9c85ea814b110c5"
+  },
+  "/Users/sam/Projects/project-regex/src-tauri/icons/StoreLogo.png": {
+    "mtime": 1781719998.2501512,
+    "hash": "9427af225d86a4c6ae9a6c4e78c4d411"
+  },
+  "/Users/sam/Projects/project-regex/src-tauri/icons/Square107x107Logo.png": {
+    "mtime": 1781719998.2566912,
+    "hash": "52862886c2eebc70906a00b4c55e24f6"
+  },
+  "/Users/sam/Projects/project-regex/src-tauri/icons/Square89x89Logo.png": {
+    "mtime": 1781719998.2542303,
+    "hash": "a88229c5fca9069f9e288089137ff813"
+  },
+  "/Users/sam/Projects/project-regex/src-tauri/icons/Square310x310Logo.png": {
+    "mtime": 1781719998.2785308,
+    "hash": "9feedd4dd9abf84db4d49595c17c0af1"
+  },
+  "/Users/sam/Projects/project-regex/src-tauri/icons/Square142x142Logo.png": {
+    "mtime": 1781719998.2596383,
+    "hash": "4b0b94d5943b57d7f4c44f361a95f5e2"
+  },
+  "/Users/sam/Projects/project-regex/src-tauri/icons/128x128.png": {
+    "mtime": 1781719998.4147553,
+    "hash": "2fb603d166c7efcbc56f4d9e72a6256b"
+  },
+  "/Users/sam/Projects/project-regex/src-tauri/icons/Square284x284Logo.png": {
+    "mtime": 1781719998.270024,
+    "hash": "c0a9556b5eaf062e50a399082d283160"
+  },
+  "/Users/sam/Projects/project-regex/src-tauri/icons/32x32.png": {
+    "mtime": 1781719998.410581,
+    "hash": "c1cbfdfb599234ab45bf01b1ea606e38"
+  },
+  "/Users/sam/Projects/project-regex/src-tauri/icons/Square44x44Logo.png": {
+    "mtime": 1781719998.2510748,
+    "hash": "6358469ff1eae17238f15289033a7b17"
+  },
+  "/Users/sam/Projects/project-regex/src-tauri/icons/Square71x71Logo.png": {
+    "mtime": 1781719998.2523975,
+    "hash": "0a0743dc31d686c466ccc597591a82fd"
+  },
+  "/Users/sam/Projects/project-regex/src-tauri/icons/128x128@2x.png": {
+    "mtime": 1781719998.4220119,
+    "hash": "969637536777f7ef5e8592f18a06b42f"
+  },
+  "/Users/sam/Projects/project-regex/src-tauri/icons/64x64.png": {
+    "mtime": 1781719998.411664,
+    "hash": "64c9585b127363c15c97e8845567987d"
+  },
+  "/Users/sam/Projects/project-regex/src-tauri/icons/ios/AppIcon-20x20@3x.png": {
+    "mtime": 1781719998.4436274,
+    "hash": "ae35b23250fc915058dd04593efc618e"
+  },
+  "/Users/sam/Projects/project-regex/src-tauri/icons/ios/AppIcon-512@2x.png": {
+    "mtime": 1781719998.5333192,
+    "hash": "24155d751505cdea443f88bd26f684ee"
+  },
+  "/Users/sam/Projects/project-regex/src-tauri/icons/ios/AppIcon-83.5x83.5@2x.png": {
+    "mtime": 1781719998.4681652,
+    "hash": "927cd44ca0a3900d9b9f7c47b378ec98"
+  },
+  "/Users/sam/Projects/project-regex/src-tauri/icons/ios/AppIcon-20x20@2x.png": {
+    "mtime": 1781719998.4427264,
+    "hash": "012bc89138204ccb6de13cc65a81e43d"
+  },
+  "/Users/sam/Projects/project-regex/src-tauri/icons/ios/AppIcon-29x29@3x.png": {
+    "mtime": 1781719998.4477286,
+    "hash": "a0658f02af89da0877f445508c89b3d1"
+  },
+  "/Users/sam/Projects/project-regex/src-tauri/icons/ios/AppIcon-40x40@2x.png": {
+    "mtime": 1781719998.4509392,
+    "hash": "6bb7f022cc00ef5ce943cc89b61efdc6"
+  },
+  "/Users/sam/Projects/project-regex/src-tauri/icons/ios/AppIcon-60x60@3x.png": {
+    "mtime": 1781719998.4596496,
+    "hash": "47a54452cd0924e43009be866b66a74b"
+  },
+  "/Users/sam/Projects/project-regex/src-tauri/icons/ios/AppIcon-40x40@2x-1.png": {
+    "mtime": 1781719998.449014,
+    "hash": "6bb7f022cc00ef5ce943cc89b61efdc6"
+  },
+  "/Users/sam/Projects/project-regex/src-tauri/icons/ios/AppIcon-20x20@2x-1.png": {
+    "mtime": 1781719998.4418387,
+    "hash": "012bc89138204ccb6de13cc65a81e43d"
+  },
+  "/Users/sam/Projects/project-regex/src-tauri/icons/ios/AppIcon-60x60@2x.png": {
+    "mtime": 1781719998.4559643,
+    "hash": "4d292c895f0dbbb09c0566050ba246b8"
+  },
+  "/Users/sam/Projects/project-regex/src-tauri/icons/ios/AppIcon-76x76@1x.png": {
+    "mtime": 1781719998.461283,
+    "hash": "7d9d0d24b90a725c8bbbe680cf3e2fcc"
+  },
+  "/Users/sam/Projects/project-regex/src-tauri/icons/ios/AppIcon-40x40@3x.png": {
+    "mtime": 1781719998.4536128,
+    "hash": "4d292c895f0dbbb09c0566050ba246b8"
+  },
+  "/Users/sam/Projects/project-regex/src-tauri/icons/ios/AppIcon-29x29@2x.png": {
+    "mtime": 1781719998.446309,
+    "hash": "547c26507d605c2f8127f6be7ce59806"
+  },
+  "/Users/sam/Projects/project-regex/src-tauri/icons/ios/AppIcon-76x76@2x.png": {
+    "mtime": 1781719998.4644382,
+    "hash": "0b440b1b1aaa38bf78aa15106279342d"
+  },
+  "/Users/sam/Projects/project-regex/src-tauri/icons/ios/AppIcon-29x29@1x.png": {
+    "mtime": 1781719998.4453251,
+    "hash": "97df8451eb74dde97fe02ca8a925dec7"
+  },
+  "/Users/sam/Projects/project-regex/src-tauri/icons/ios/AppIcon-40x40@1x.png": {
+    "mtime": 1781719998.4496732,
+    "hash": "012bc89138204ccb6de13cc65a81e43d"
+  },
+  "/Users/sam/Projects/project-regex/src-tauri/icons/ios/AppIcon-20x20@1x.png": {
+    "mtime": 1781719998.44219,
+    "hash": "e4498178932ceaa73246530bc37fd5cc"
+  },
+  "/Users/sam/Projects/project-regex/src-tauri/icons/ios/AppIcon-29x29@2x-1.png": {
+    "mtime": 1781719998.4448996,
+    "hash": "547c26507d605c2f8127f6be7ce59806"
+  },
+  "/Users/sam/Projects/project-regex/src-tauri/icons/android/mipmap-mdpi/ic_launcher_foreground.png": {
+    "mtime": 1781719998.5399754,
+    "hash": "a46fa5c6c6ac5db3d1dcc022c9c21d66"
+  },
+  "/Users/sam/Projects/project-regex/src-tauri/icons/android/mipmap-mdpi/ic_launcher.png": {
+    "mtime": 1781719998.5707564,
+    "hash": "f3b9bba83fdc270db178fe6d32fe6cf2"
+  },
+  "/Users/sam/Projects/project-regex/src-tauri/icons/android/mipmap-mdpi/ic_launcher_round.png": {
+    "mtime": 1781719998.5698786,
+    "hash": "942d07241b30445af7fb8dca661a6cec"
+  },
+  "/Users/sam/Projects/project-regex/src-tauri/icons/android/mipmap-hdpi/ic_launcher_foreground.png": {
+    "mtime": 1781719998.5374584,
+    "hash": "765c9bb1882255d69ba265fa4dc5044d"
+  },
+  "/Users/sam/Projects/project-regex/src-tauri/icons/android/mipmap-hdpi/ic_launcher.png": {
+    "mtime": 1781719998.568969,
+    "hash": "d4aa1889f9832b6e9e56d0cfdacc22bd"
+  },
+  "/Users/sam/Projects/project-regex/src-tauri/icons/android/mipmap-hdpi/ic_launcher_round.png": {
+    "mtime": 1781719998.5681129,
+    "hash": "b464c8019b10b922c67e566baed79c79"
+  },
+  "/Users/sam/Projects/project-regex/src-tauri/icons/android/mipmap-xxxhdpi/ic_launcher_foreground.png": {
+    "mtime": 1781719998.5671175,
+    "hash": "d81ba7ac43b7aa66c946c4ceb12b9819"
+  },
+  "/Users/sam/Projects/project-regex/src-tauri/icons/android/mipmap-xxxhdpi/ic_launcher.png": {
+    "mtime": 1781719998.593119,
+    "hash": "cb38c7de401aff6a1b8d23f61a1a8203"
+  },
+  "/Users/sam/Projects/project-regex/src-tauri/icons/android/mipmap-xxxhdpi/ic_launcher_round.png": {
+    "mtime": 1781719998.5873976,
+    "hash": "60793fcbf20bc308fe6a4bfc28a56073"
+  },
+  "/Users/sam/Projects/project-regex/src-tauri/icons/android/mipmap-xxhdpi/ic_launcher_foreground.png": {
+    "mtime": 1781719998.5537057,
+    "hash": "745edbbc0e31e428fcc5bd405b3f6638"
+  },
+  "/Users/sam/Projects/project-regex/src-tauri/icons/android/mipmap-xxhdpi/ic_launcher.png": {
+    "mtime": 1781719998.5821016,
+    "hash": "5227c06950a4add69ffe66a0153781e4"
+  },
+  "/Users/sam/Projects/project-regex/src-tauri/icons/android/mipmap-xxhdpi/ic_launcher_round.png": {
+    "mtime": 1781719998.5786233,
+    "hash": "bd900f66cdf2b4da4a684b56ca598b80"
+  },
+  "/Users/sam/Projects/project-regex/src-tauri/icons/android/mipmap-xhdpi/ic_launcher_foreground.png": {
+    "mtime": 1781719998.545033,
+    "hash": "b5bdfd0dcd3c47619c868cac506ef21e"
+  },
+  "/Users/sam/Projects/project-regex/src-tauri/icons/android/mipmap-xhdpi/ic_launcher.png": {
+    "mtime": 1781719998.5748389,
+    "hash": "8c281ca5bb405f164b8d1aeba4d01205"
+  },
+  "/Users/sam/Projects/project-regex/src-tauri/icons/android/mipmap-xhdpi/ic_launcher_round.png": {
+    "mtime": 1781719998.572897,
+    "hash": "dfc11e220e4947aee7fbd60e7b9168ef"
+  }
+}
