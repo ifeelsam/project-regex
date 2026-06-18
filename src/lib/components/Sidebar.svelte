@@ -7,7 +7,9 @@
   }
 </script>
 
-<nav class="flex h-full w-56 shrink-0 flex-col border-r border-border bg-bg-raised px-3 py-5">
+<nav class="flex h-full w-56 shrink-0 flex-col border-r border-border bg-bg-raised px-3 pb-5">
+  <div class="titlebar-inset" data-tauri-drag-region aria-hidden="true"></div>
+
   <div class="mb-8 px-3">
     <p class="text-xs font-medium uppercase tracking-[0.14em] text-text-faint">Regex</p>
     <p class="mt-1 text-sm text-text-muted">Inspiration to output</p>

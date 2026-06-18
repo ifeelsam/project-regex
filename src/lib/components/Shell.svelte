@@ -18,7 +18,8 @@
 
   <div class="flex min-w-0 flex-1 flex-col">
     <header
-      class="flex shrink-0 items-end justify-between border-b border-border px-8 pb-5 pt-8"
+      class="flex shrink-0 items-end justify-between border-b border-border px-8 pb-5"
+      style="padding-top: var(--spacing-titlebar)"
       data-tauri-drag-region
     >
       <div>
