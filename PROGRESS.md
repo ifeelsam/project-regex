@@ -34,7 +34,11 @@ Living checklist for the build. Tick items as phases land; record spike findings
   - [x] Produce-this flow on ready ideas (title, brief, format)
   - [x] Graduation links idea + references to a project
   - [x] Projects list (active / shipped) and project detail view
-- [ ] **Phase 6 — Breakdown engine (desktop)**
+- [x] **Phase 6 — Breakdown engine (desktop)**
+  - [x] Sidecar wiring (yt-dlp, ffmpeg, whisper) + docs + dev stubs
+  - [x] Job queue with cancel + progress events
+  - [x] Pipeline: download, keyframes, clips, audio, whisper, structure
+  - [x] Assets saved to DB; breakdown panel on project detail
 - [ ] **Phase 7 — Asset library**
 - [ ] **Phase 8 — Polish (desktop)**
 - [ ] **Phase 9 — Mobile capture client**
@@ -43,8 +47,12 @@ Living checklist for the build. Tick items as phases land; record spike findings
 ## Risk spikes
 
 1. **Mobile share-target capture** — _pending._
-2. **Sidecar bundling across macOS architectures** — _pending._
-3. **Source acquisition & ToS** — _pending._
+2. **Sidecar bundling across macOS architectures** — Tauri resolves `externalBin` by target
+   triple (`aarch64-apple-darwin` / `x86_64-apple-darwin`). Stub scripts auto-generate at
+   build time; real binaries documented in `docs/media-tools.md`. Pipeline degrades with a
+   clear message when tools are missing.
+3. **Source acquisition & ToS** — yt-dlp runs with `--max-filesize 500M`; failures surface as
+   readable errors. Personal-use checkbox required before any breakdown starts.
 
 ## Notes
 

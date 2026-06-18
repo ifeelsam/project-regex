@@ -44,7 +44,7 @@
       "icons/icon.ico"
     ],
     "resources": [],
-    "externalBin": []
+    "externalBin": ["binaries/yt-dlp", "binaries/ffmpeg", "binaries/whisper"]
   },
   "plugins": {}
 }
