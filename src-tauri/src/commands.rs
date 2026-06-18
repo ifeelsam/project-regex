@@ -131,13 +131,28 @@ pub async fn search_items(
 }
 
 #[tauri::command]
+pub async fn list_project_summaries(
+    state: State<'_, AppState>,
+) -> Result<Vec<db::projects::ProjectSummary>, DbError> {
+    db::projects::list_summaries(&state.pool).await
+}
+
+#[tauri::command]
+pub async fn get_project_detail(
+    state: State<'_, AppState>,
+    id: String,
+) -> Result<db::projects::ProjectDetail, DbError> {
+    db::projects::get_detail(&state.pool, &id).await
+}
+
+#[tauri::command]
 pub async fn create_project(
     state: State<'_, AppState>,
     title: String,
     brief: String,
     format: ProjectFormat,
 ) -> Result<Project, DbError> {
-    db::projects::create(&state.pool, &title, &brief, format).await
+    db::projects::create(&state.pool, &title, &brief, format, None).await
 }
 
 #[tauri::command]

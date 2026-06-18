@@ -33,6 +33,19 @@ export type Project = {
   status: string;
   created_at: string;
   shipped_at: string | null;
+  primary_item_id: string | null;
+};
+
+export type ProjectSummary = {
+  project: Project;
+  primary_item: ItemWithTags;
+  reference_count: number;
+};
+
+export type ProjectDetail = {
+  project: Project;
+  primary_item: ItemWithTags;
+  references: ItemWithTags[];
 };
 
 export type CaptureItemInput = {
@@ -113,6 +126,8 @@ export const api = {
   createProject: (title: string, brief: string, format: ProjectFormat) =>
     call<Project>('create_project', { title, brief, format }),
   listProjects: () => call<Project[]>('list_projects'),
+  listProjectSummaries: () => call<ProjectSummary[]>('list_project_summaries'),
+  getProjectDetail: (id: string) => call<ProjectDetail>('get_project_detail', { id }),
   graduateItem: (itemId: string, title: string, brief: string, format: ProjectFormat) =>
     call<Project>('graduate_item', {
       item_id: itemId,

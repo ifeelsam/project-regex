@@ -87,6 +87,7 @@ pub struct Project {
     pub status: String,
     pub created_at: String,
     pub shipped_at: Option<String>,
+    pub primary_item_id: Option<String>,
 }
 
 #[derive(Debug, Clone, Serialize, Deserialize)]

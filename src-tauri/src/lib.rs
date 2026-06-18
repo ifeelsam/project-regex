@@ -70,6 +70,8 @@ pub fn run() {
             commands::search_items,
             commands::create_project,
             commands::list_projects,
+            commands::list_project_summaries,
+            commands::get_project_detail,
             commands::graduate_item,
             commands::detect_platform,
             commands::default_captured_on,
