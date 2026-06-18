@@ -4,6 +4,7 @@
   import { onMount } from 'svelte';
   import { page } from '$app/stores';
   import { api, type IdeaDetail, type ItemWithTags } from '$lib/api';
+  import GraduateForm from '$lib/components/GraduateForm.svelte';
 
   let detail = $state<IdeaDetail | null>(null);
   let developNote = $state('');
@@ -194,6 +195,15 @@
         >
       </div>
     </header>
+
+    {#if detail.item.status === 'ready' && ideaId}
+      <GraduateForm
+        ideaId={ideaId}
+        defaultTitle={detail.item.title || detail.item.note.slice(0, 80)}
+        defaultBrief={detail.item.develop_note}
+        ondone={(text) => (message = text)}
+      />
+    {/if}
 
     <section class="rounded-[var(--radius-card)] border border-border bg-bg-raised p-5">
       <h3 class="text-sm font-medium">Original spark</h3>

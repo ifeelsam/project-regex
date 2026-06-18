@@ -30,7 +30,10 @@ Living checklist for the build. Tick items as phases land; record spike findings
   - [x] Idea detail with original note and thinking space
   - [x] Reference attachments via search
   - [x] Tag editing on ideas
-- [ ] **Phase 5 — Graduation gate → projects**
+- [x] **Phase 5 — Graduation gate → projects**
+  - [x] Produce-this flow on ready ideas (title, brief, format)
+  - [x] Graduation links idea + references to a project
+  - [x] Projects list (active / shipped) and project detail view
 - [ ] **Phase 6 — Breakdown engine (desktop)**
 - [ ] **Phase 7 — Asset library**
 - [ ] **Phase 8 — Polish (desktop)**
