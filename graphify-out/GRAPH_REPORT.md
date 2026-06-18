@@ -1,16 +1,16 @@
 # Graph Report - project-regex  (2026-06-18)
 
 ## Corpus Check
-- 40 files · ~16,544 words
+- 62 files · ~23,471 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 171 nodes · 201 edges · 24 communities (18 shown, 6 thin omitted)
-- Extraction: 89% EXTRACTED · 11% INFERRED · 0% AMBIGUOUS · INFERRED: 23 edges (avg confidence: 0.8)
+- 277 nodes · 370 edges · 29 communities (22 shown, 7 thin omitted)
+- Extraction: 86% EXTRACTED · 14% INFERRED · 0% AMBIGUOUS · INFERRED: 50 edges (avg confidence: 0.8)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `c75cdd91`
+- Built from commit: `0340f925`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -20,6 +20,7 @@
 - [[_COMMUNITY_Community 2|Community 2]]
 - [[_COMMUNITY_Community 3|Community 3]]
 - [[_COMMUNITY_Community 4|Community 4]]
+- [[_COMMUNITY_Community 5|Community 5]]
 - [[_COMMUNITY_Community 6|Community 6]]
 - [[_COMMUNITY_Community 7|Community 7]]
 - [[_COMMUNITY_Community 8|Community 8]]
@@ -33,18 +34,22 @@
 - [[_COMMUNITY_Community 17|Community 17]]
 - [[_COMMUNITY_Community 18|Community 18]]
 - [[_COMMUNITY_Community 19|Community 19]]
+- [[_COMMUNITY_Community 24|Community 24]]
+- [[_COMMUNITY_Community 25|Community 25]]
+- [[_COMMUNITY_Community 26|Community 26]]
+- [[_COMMUNITY_Community 27|Community 27]]
 
 ## God Nodes (most connected - your core abstractions)
-1. `Regex` - 10 edges
-2. `capture()` - 9 edges
-3. `run_enrichment()` - 6 edges
-4. `set_status()` - 6 edges
-5. `get()` - 5 edges
-6. `connect_memory()` - 5 edges
-7. `create()` - 5 edges
-8. `search()` - 5 edges
-9. `fetch()` - 5 edges
-10. `fetch_open_graph()` - 5 edges
+1. `capture()` - 12 edges
+2. `run_inner()` - 10 edges
+3. `Regex` - 10 edges
+4. `get_item_tags()` - 8 edges
+5. `set_status()` - 8 edges
+6. `connect_memory()` - 8 edges
+7. `graduate_item()` - 8 edges
+8. `graduates_ready_idea_with_references()` - 7 edges
+9. `Media tools for the breakdown engine` - 7 edges
+10. `run_enrichment()` - 6 edges
 
 ## Surprising Connections (you probably didn't know these)
 - `main()` --calls--> `Build`  [INFERRED]
@@ -58,31 +63,35 @@
 - `capture_item()` --calls--> `capture()`  [INFERRED]
   src-tauri/src/commands.rs → src-tauri/src/db/items.rs
 
-## Communities (24 total, 6 thin omitted)
+## Communities (29 total, 7 thin omitted)
 
 ### Community 0 - "Community 0"
-Cohesion: 0.14
-Nodes (18): capture(), dedupes_on_url(), find_by_url(), get(), ItemWithTags, list(), list_with_tags(), set_status() (+10 more)
+Cohesion: 0.09
+Nodes (37): capture(), dedupes_on_url(), find_by_url(), get(), ItemWithTags, list(), list_with_tags(), set_status() (+29 more)
 
 ### Community 1 - "Community 1"
 Cohesion: 0.11
-Nodes (16): Build, code:bash (npm install), code:bash (npm run tauri dev), code:bash (npm run dev), code:bash (npm run tauri build), code:bash (npm run lint          # prettier + eslint), Develop, License / use (+8 more)
+Nodes (17): Build, code:bash (npm install), code:bash (npm run tauri dev), code:bash (npm run dev), code:bash (npm run tauri build), code:bash (npm run lint          # prettier + eslint), Develop, License / use (+9 more)
 
 ### Community 2 - "Community 2"
-Cohesion: 0.14
-Nodes (11): @tauri-apps/api/core, @tauri-apps/api/event, @tauri-apps/plugin-opener, $lib/components/CaptureForm.svelte, $lib/components/EmptyState.svelte, $lib/components/InboxItemCard.svelte, $lib/components/Shell.svelte, ./Sidebar.svelte (+3 more)
+Cohesion: 0.13
+Nodes (18): ready, @tauri-apps/api/core, @tauri-apps/api/event, $app/navigation, @tauri-apps/plugin-opener, shipped, $lib/components/BreakdownPanel.svelte, $lib/components/CaptureForm.svelte (+10 more)
 
 ### Community 3 - "Community 3"
-Cohesion: 0.14
-Nodes (14): api, call(), CapturedOn, CaptureItemInput, CaptureItemResult, humanError(), Item, ItemStatus (+6 more)
+Cohesion: 0.09
+Nodes (23): api, Asset, AssetType, Breakdown, BreakdownProgress, BreakdownStatus, call(), CapturedOn (+15 more)
 
 ### Community 4 - "Community 4"
 Cohesion: 0.17
 Nodes (10): CapturedOn, CaptureItemInput, CaptureItemResult, Item, ItemStatus, Platform, Project, ProjectFormat (+2 more)
 
+### Community 5 - "Community 5"
+Cohesion: 0.1
+Nodes (8): get_detail(), IdeaDetail, list_develop(), remove(), get_idea_detail(), list_develop_items(), list_project_summaries(), remove_item_reference()
+
 ### Community 6 - "Community 6"
-Cohesion: 0.24
-Nodes (8): excerpt(), RawHit, search(), search_finds_note_text(), get_item_tags(), get_or_create(), set_item_tags(), search_items()
+Cohesion: 0.47
+Nodes (5): excerpt(), RawHit, search(), search_finds_note_text(), search_items()
 
 ### Community 7 - "Community 7"
 Cohesion: 0.27
@@ -93,8 +102,8 @@ Cohesion: 0.57
 Nodes (6): fetch(), fetch_oembed(), fetch_open_graph(), fetch_youtube_oembed(), LinkMetadata, meta_content()
 
 ### Community 9 - "Community 9"
-Cohesion: 0.47
-Nodes (4): create(), get(), graduate_item(), create_project()
+Cohesion: 0.13
+Nodes (16): BreakdownProgress, check_cancelled(), clear_cancel(), emit_progress(), find_source_file(), register_cancel(), run(), run_inner() (+8 more)
 
 ### Community 11 - "Community 11"
 Cohesion: 0.47
@@ -108,25 +117,37 @@ Nodes (4): Notes, Phases, Progress, Risk spikes
 Cohesion: 0.4
 Nodes (3): AppState, run(), main()
 
+### Community 24 - "Community 24"
+Cohesion: 0.12
+Nodes (16): code:text (src-tauri/binaries/), code:text (yt-dlp-x86_64-apple-darwin), code:bash (curl -L https://github.com/yt-dlp/yt-dlp/releases/latest/dow), code:bash (git clone https://github.com/ggml-org/whisper.cpp), code:bash (mkdir -p ~/Library/Application\ Support/app.regex.desktop/mo), Development stubs, ffmpeg, macOS (Apple Silicon) (+8 more)
+
+### Community 25 - "Community 25"
+Cohesion: 0.25
+Nodes (8): Asset, AssetType, Breakdown, BreakdownStatus, create(), get(), now_iso(), set_status()
+
+### Community 26 - "Community 26"
+Cohesion: 0.25
+Nodes (3): cancel_job(), cancel_breakdown(), MediaToolsStatus
+
 ## Knowledge Gaps
-- **45 isolated node(s):** `config`, `AppState`, `ItemEnrichedEvent`, `Platform`, `CapturedOn` (+40 more)
+- **76 isolated node(s):** `config`, `MediaToolsStatus`, `AppState`, `ItemEnrichedEvent`, `BreakdownProgress` (+71 more)
   These have ≤1 connection - possible missing edges or undocumented components.
-- **6 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
+- **7 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
 - **Why does `capture()` connect `Community 0` to `Community 6`?**
-  _High betweenness centrality (0.104) - this node is a cross-community bridge._
+  _High betweenness centrality (0.054) - this node is a cross-community bridge._
 - **Why does `run_enrichment()` connect `Community 7` to `Community 8`, `Community 0`?**
-  _High betweenness centrality (0.093) - this node is a cross-community bridge._
+  _High betweenness centrality (0.046) - this node is a cross-community bridge._
 - **Why does `update_metadata()` connect `Community 0` to `Community 7`?**
-  _High betweenness centrality (0.090) - this node is a cross-community bridge._
-- **Are the 4 inferred relationships involving `capture()` (e.g. with `capture_item()` and `get_item_tags()`) actually correct?**
-  _`capture()` has 4 INFERRED edges - model-reasoned connections that need verification._
-- **Are the 3 inferred relationships involving `run_enrichment()` (e.g. with `fetch()` and `update_metadata()`) actually correct?**
-  _`run_enrichment()` has 3 INFERRED edges - model-reasoned connections that need verification._
-- **Are the 3 inferred relationships involving `set_status()` (e.g. with `update_item_status()` and `assert_transition()`) actually correct?**
-  _`set_status()` has 3 INFERRED edges - model-reasoned connections that need verification._
-- **What connects `config`, `AppState`, `ItemEnrichedEvent` to the rest of the system?**
-  _45 weakly-connected nodes found - possible documentation gaps or missing edges._
+  _High betweenness centrality (0.046) - this node is a cross-community bridge._
+- **Are the 7 inferred relationships involving `capture()` (e.g. with `capture_item()` and `attaches_and_lists_references()`) actually correct?**
+  _`capture()` has 7 INFERRED edges - model-reasoned connections that need verification._
+- **Are the 3 inferred relationships involving `run_inner()` (e.g. with `insert()` and `insert_whisper()`) actually correct?**
+  _`run_inner()` has 3 INFERRED edges - model-reasoned connections that need verification._
+- **Are the 7 inferred relationships involving `get_item_tags()` (e.g. with `list_for_idea()` and `list_with_tags()`) actually correct?**
+  _`get_item_tags()` has 7 INFERRED edges - model-reasoned connections that need verification._
+- **What connects `config`, `MediaToolsStatus`, `AppState` to the rest of the system?**
+  _76 weakly-connected nodes found - possible documentation gaps or missing edges._

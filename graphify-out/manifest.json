@@ -12,24 +12,48 @@
     "hash": "b9c0d1f116fd39d5f2a115f3f002c6dd"
   },
   "/Users/sam/Projects/project-regex/src-tauri/build.rs": {
-    "mtime": 1781719749.687642,
-    "hash": "48af8f08e39b73562f866d3a50b2e88a"
+    "mtime": 1781758100.306023,
+    "hash": "a052d2a4589e8f27c2c7d07021a711d9"
+  },
+  "/Users/sam/Projects/project-regex/src-tauri/migrations/002_develop_note.sql": {
+    "mtime": 1781757474.2120755,
+    "hash": "1fa70776edefd8553483e406a8e2114f"
   },
   "/Users/sam/Projects/project-regex/src-tauri/migrations/001_init.sql": {
     "mtime": 1781728010.2287712,
     "hash": "effba7d01873567208018a3665eb322e"
   },
+  "/Users/sam/Projects/project-regex/src-tauri/migrations/003_project_primary_item.sql": {
+    "mtime": 1781757603.6245067,
+    "hash": "c0340236159de8d1f00a8948be66d98d"
+  },
+  "/Users/sam/Projects/project-regex/src-tauri/binaries/ffmpeg-aarch64-apple-darwin": {
+    "mtime": 1781758087.6057737,
+    "hash": "e5117ecce14d306bb821ce3b26744b92"
+  },
+  "/Users/sam/Projects/project-regex/src-tauri/binaries/yt-dlp-aarch64-apple-darwin": {
+    "mtime": 1781758087.601787,
+    "hash": "e5117ecce14d306bb821ce3b26744b92"
+  },
+  "/Users/sam/Projects/project-regex/src-tauri/binaries/whisper-aarch64-apple-darwin": {
+    "mtime": 1781758087.608718,
+    "hash": "e5117ecce14d306bb821ce3b26744b92"
+  },
+  "/Users/sam/Projects/project-regex/src-tauri/src/breakdown_commands.rs": {
+    "mtime": 1781758172.5669267,
+    "hash": "d860edf368d32564c1219f9238a1e264"
+  },
   "/Users/sam/Projects/project-regex/src-tauri/src/lib.rs": {
-    "mtime": 1781729068.5768988,
-    "hash": "f9060cd34ec872e2cb47c1a928b96757"
+    "mtime": 1781758069.7281244,
+    "hash": "502b62fe34c8831f881ff7872660b846"
   },
   "/Users/sam/Projects/project-regex/src-tauri/src/enrich.rs": {
     "mtime": 1781729086.7715614,
     "hash": "bf637f14e622b7f02c1348cbc40dec52"
   },
   "/Users/sam/Projects/project-regex/src-tauri/src/commands.rs": {
-    "mtime": 1781729068.0661662,
-    "hash": "299fe4e50ee5a2d06c8fc86126af0948"
+    "mtime": 1781757611.7997222,
+    "hash": "56e991907f16029ab86d6720b8b3e8f1"
   },
   "/Users/sam/Projects/project-regex/src-tauri/src/main.rs": {
     "mtime": 1781719773.3793297,
@@ -39,25 +63,49 @@
     "mtime": 1781729048.557276,
     "hash": "61ff249b47580ba2eeab733af24f65da"
   },
+  "/Users/sam/Projects/project-regex/src-tauri/src/breakdown/mod.rs": {
+    "mtime": 1781758115.8946278,
+    "hash": "4015369ab9f6aad2ef541a84fa53e9e4"
+  },
+  "/Users/sam/Projects/project-regex/src-tauri/src/breakdown/pipeline.rs": {
+    "mtime": 1781758207.991749,
+    "hash": "21bb5e993a708a25c94a3496c11b51f5"
+  },
+  "/Users/sam/Projects/project-regex/src-tauri/src/breakdown/structure.rs": {
+    "mtime": 1781758150.6779299,
+    "hash": "41ec18b6185c9596d4e19572f3df403c"
+  },
   "/Users/sam/Projects/project-regex/src-tauri/src/db/error.rs": {
     "mtime": 1781728108.168821,
     "hash": "bac14f285089b6024ab2346406ef59bf"
   },
+  "/Users/sam/Projects/project-regex/src-tauri/src/db/references.rs": {
+    "mtime": 1781757474.5295153,
+    "hash": "046a599f0061d79b804c47248ab7d160"
+  },
   "/Users/sam/Projects/project-regex/src-tauri/src/db/models.rs": {
-    "mtime": 1781728213.8508632,
-    "hash": "505bde6ba3431f9a9ddb7600851ff6e4"
+    "mtime": 1781757610.8977864,
+    "hash": "17c56685a2dec64171e47f4454a050e2"
+  },
+  "/Users/sam/Projects/project-regex/src-tauri/src/db/breakdowns.rs": {
+    "mtime": 1781758133.6550658,
+    "hash": "9c5ef4d2536eb32a6ac63369b5c74f28"
+  },
+  "/Users/sam/Projects/project-regex/src-tauri/src/db/transcripts.rs": {
+    "mtime": 1781758052.1329017,
+    "hash": "ca502a73ff51e64f06d57bbb6b9f3758"
   },
   "/Users/sam/Projects/project-regex/src-tauri/src/db/tags.rs": {
     "mtime": 1781728058.530561,
     "hash": "6418e7aaa4d597d77086923782e80a22"
   },
   "/Users/sam/Projects/project-regex/src-tauri/src/db/items.rs": {
-    "mtime": 1781729071.33377,
-    "hash": "79d7043599fc286b9696b241ddc5ef55"
+    "mtime": 1781757477.6277957,
+    "hash": "56dd3782a77bc2de80b335772a22b8d0"
   },
   "/Users/sam/Projects/project-regex/src-tauri/src/db/mod.rs": {
-    "mtime": 1781728069.9292488,
-    "hash": "4237cd97e2857fb0805dd6370b2781aa"
+    "mtime": 1781758052.2087874,
+    "hash": "882673c5f5105b78ab306fb91a898f6d"
   },
   "/Users/sam/Projects/project-regex/src-tauri/src/db/status.rs": {
     "mtime": 1781728038.5315628,
@@ -68,12 +116,20 @@
     "hash": "960d774905f34aef828fbbbcaad01b9f"
   },
   "/Users/sam/Projects/project-regex/src-tauri/src/db/projects.rs": {
-    "mtime": 1781728063.1115317,
-    "hash": "57c382ee0d6e9a1bad4ce5ed09f3e3b4"
+    "mtime": 1781757634.7916365,
+    "hash": "e7fe50f9d8f0077aaf07b87a24ddf896"
+  },
+  "/Users/sam/Projects/project-regex/src-tauri/src/db/assets.rs": {
+    "mtime": 1781758150.8316727,
+    "hash": "0d272efd306cf9f61954735851c5debf"
   },
   "/Users/sam/Projects/project-regex/src-tauri/src/db/search.rs": {
     "mtime": 1781728228.004564,
     "hash": "f5e9aecf356619845e7fe3bafbce8095"
+  },
+  "/Users/sam/Projects/project-regex/src-tauri/src/db/ideas.rs": {
+    "mtime": 1781757482.04521,
+    "hash": "388d18137bd679870a4a02c91dcd8cc9"
   },
   "/Users/sam/Projects/project-regex/src-tauri/src/metadata/mod.rs": {
     "mtime": 1781729048.5552058,
@@ -88,24 +144,44 @@
     "hash": "e3e6c7e40a262c10d2fbe8cfb38852dc"
   },
   "/Users/sam/Projects/project-regex/src/lib/api.ts": {
-    "mtime": 1781729124.1714983,
-    "hash": "a5b0639e68c0f890b6416f5fda725247"
+    "mtime": 1781758123.1832244,
+    "hash": "2e5b6153d6b744868bf91d261c0893fe"
   },
   "/Users/sam/Projects/project-regex/src/lib/components/EmptyState.svelte": {
     "mtime": 1781725075.0408087,
     "hash": "68e9a5d15db6b630a8e868b94407503f"
+  },
+  "/Users/sam/Projects/project-regex/src/lib/components/BreakdownPanel.svelte": {
+    "mtime": 1781758120.730604,
+    "hash": "a7b0529df613220efdb0de51058e7fd2"
+  },
+  "/Users/sam/Projects/project-regex/src/lib/components/DevelopBoard.svelte": {
+    "mtime": 1781757526.863978,
+    "hash": "c3d9df5c409ddd62fbf8fa68196a1a6d"
+  },
+  "/Users/sam/Projects/project-regex/src/lib/components/GraduateForm.svelte": {
+    "mtime": 1781757655.5141177,
+    "hash": "24fb65c5cca9f0e21dc188788956c5b3"
+  },
+  "/Users/sam/Projects/project-regex/src/lib/components/DevelopIdeaCard.svelte": {
+    "mtime": 1781757526.8681452,
+    "hash": "dfa981d90a72770d2847848542829171"
   },
   "/Users/sam/Projects/project-regex/src/lib/components/InboxItemCard.svelte": {
     "mtime": 1781729129.4650307,
     "hash": "51077b8bbf7cbd56df8b53c7b395951c"
   },
   "/Users/sam/Projects/project-regex/src/lib/components/Sidebar.svelte": {
-    "mtime": 1781725077.4785104,
-    "hash": "dc8dfe77ed6585115cfff3aea761baad"
+    "mtime": 1781757894.811817,
+    "hash": "48d50b0b249b4d71e8ccec205db38581"
+  },
+  "/Users/sam/Projects/project-regex/src/lib/components/ProjectCard.svelte": {
+    "mtime": 1781757657.1208353,
+    "hash": "dd47e26e656c984af09dd6d1ad409cfb"
   },
   "/Users/sam/Projects/project-regex/src/lib/components/Shell.svelte": {
-    "mtime": 1781725079.4857428,
-    "hash": "37b82e05bb37ae8192f7d14ab7118dea"
+    "mtime": 1781757894.811817,
+    "hash": "8956ef0f66ba52c2dc4e51c585881265"
   },
   "/Users/sam/Projects/project-regex/src/lib/components/CaptureForm.svelte": {
     "mtime": 1781729129.4514806,
@@ -132,16 +208,24 @@
     "hash": "5fbbe7961642231ba50473106c7458da"
   },
   "/Users/sam/Projects/project-regex/src/routes/(app)/develop/+page.svelte": {
-    "mtime": 1781725083.996298,
-    "hash": "a72032707808cd45ac70b69fa3e0f6b2"
+    "mtime": 1781757510.0822601,
+    "hash": "6b574d0feac9698156cc811a67a934a3"
+  },
+  "/Users/sam/Projects/project-regex/src/routes/(app)/develop/[id]/+page.svelte": {
+    "mtime": 1781757668.7335272,
+    "hash": "7d84fd115e3b84a82bfabf4f883ea2a0"
   },
   "/Users/sam/Projects/project-regex/src/routes/(app)/inbox/+page.svelte": {
     "mtime": 1781729135.3651507,
     "hash": "ecf2d41a497eac404f0ec677889fdaac"
   },
   "/Users/sam/Projects/project-regex/src/routes/(app)/projects/+page.svelte": {
-    "mtime": 1781725084.9675229,
-    "hash": "5efee7b6972a511e0fcef8c33d54a2ee"
+    "mtime": 1781757646.5179565,
+    "hash": "d106265cfda9277a7f24d18cfa829714"
+  },
+  "/Users/sam/Projects/project-regex/src/routes/(app)/projects/[id]/+page.svelte": {
+    "mtime": 1781758125.3790567,
+    "hash": "36fae7d395d9cac8c87db089c36d3d43"
   },
   "/Users/sam/Projects/project-regex/src/routes/(app)/library/+page.svelte": {
     "mtime": 1781725085.8962936,
@@ -152,12 +236,16 @@
     "hash": "c221e6e80345d7c3405c30811370e492"
   },
   "/Users/sam/Projects/project-regex/PROGRESS.md": {
-    "mtime": 1781729136.3813047,
-    "hash": "6e583bb26a3b8c3f42b704706ce1cdd2"
+    "mtime": 1781758135.307692,
+    "hash": "967127937c22be58a458ca41121f5464"
   },
   "/Users/sam/Projects/project-regex/README.md": {
     "mtime": 1781719858.180989,
     "hash": "2d51280dfbe8e6b49acb90f75855fa63"
+  },
+  "/Users/sam/Projects/project-regex/docs/media-tools.md": {
+    "mtime": 1781758092.1751418,
+    "hash": "097c22385cb0cf292de5aae12bfcaf1f"
   },
   "/Users/sam/Projects/project-regex/src/app.html": {
     "mtime": 1781719661.5752783,
