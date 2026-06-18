@@ -25,7 +25,11 @@ Living checklist for the build. Tick items as phases land; record spike findings
   - [x] Capture form with note-first flow and thought mode
   - [x] Background metadata + auto transcript enrichment
   - [x] Inbox list with instant search and tag filters
-- [ ] **Phase 4 — Develop**
+- [x] **Phase 4 — Develop**
+  - [x] Brewing / ready board with status moves
+  - [x] Idea detail with original note and thinking space
+  - [x] Reference attachments via search
+  - [x] Tag editing on ideas
 - [ ] **Phase 5 — Graduation gate → projects**
 - [ ] **Phase 6 — Breakdown engine (desktop)**
 - [ ] **Phase 7 — Asset library**
