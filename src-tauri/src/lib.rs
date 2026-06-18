@@ -4,6 +4,10 @@
 //! the mobile entry points, and unit-tested without a running webview.
 
 mod commands;
+#[cfg(desktop)]
+mod breakdown;
+#[cfg(desktop)]
+mod breakdown_commands;
 mod db;
 mod enrich;
 mod metadata;
@@ -12,8 +16,17 @@ mod transcripts;
 use sqlx::SqlitePool;
 use tauri::Manager;
 
+#[cfg(desktop)]
+use breakdown::CancelMap;
+#[cfg(desktop)]
+use std::collections::HashMap;
+#[cfg(desktop)]
+use std::sync::{Arc, Mutex};
+
 pub struct AppState {
     pub pool: SqlitePool,
+    #[cfg(desktop)]
+    pub breakdown_cancels: CancelMap,
 }
 
 #[cfg_attr(mobile, tauri::mobile_entry_point)]
@@ -31,7 +44,9 @@ pub fn run() {
         .plugin(tauri_plugin_os::init());
 
     #[cfg(desktop)]
-    let builder = builder.plugin(tauri_plugin_global_shortcut::Builder::new().build());
+    let builder = builder
+        .plugin(tauri_plugin_global_shortcut::Builder::new().build())
+        .plugin(tauri_plugin_shell::init());
 
     builder
         .setup(|app| {
@@ -47,7 +62,16 @@ pub fn run() {
                     .await
                     .expect("failed to open the local database");
 
-                handle.manage(AppState { pool });
+                #[cfg(desktop)]
+                let state = AppState {
+                    pool,
+                    breakdown_cancels: Arc::new(Mutex::new(HashMap::new())),
+                };
+
+                #[cfg(not(desktop))]
+                let state = AppState { pool };
+
+                handle.manage(state);
             });
             Ok(())
         })
@@ -77,6 +101,16 @@ pub fn run() {
             commands::default_captured_on,
             enrich::enrich_item,
             enrich::add_auto_transcript,
+            #[cfg(desktop)]
+            breakdown_commands::start_breakdown,
+            #[cfg(desktop)]
+            breakdown_commands::cancel_breakdown,
+            #[cfg(desktop)]
+            breakdown_commands::list_project_breakdowns,
+            #[cfg(desktop)]
+            breakdown_commands::list_project_assets,
+            #[cfg(desktop)]
+            breakdown_commands::check_media_tools,
         ])
         .run(tauri::generate_context!())
         .expect("error while running the Regex application");
