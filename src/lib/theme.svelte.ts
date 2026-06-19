@@ -1,9 +1,9 @@
 export type Theme = 'dark' | 'light';
 
 function readStoredTheme(): Theme {
-  if (typeof localStorage === 'undefined') return 'dark';
+  if (typeof localStorage === 'undefined') return 'light';
   const stored = localStorage.getItem('regex-theme');
-  return stored === 'light' ? 'light' : 'dark';
+  return stored === 'dark' ? 'dark' : 'light';
 }
 
 function applyTheme(theme: Theme) {

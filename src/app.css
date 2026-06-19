@@ -1,50 +1,78 @@
 @import 'tailwindcss';
 
-/* Dark mode driven by a class on <html> so we control it from app state. */
 @custom-variant dark (&:where(.dark, .dark *));
 
-/* ----- Design tokens ------------------------------------------------------ */
+/* ----- Design tokens (Project Regex brand) -------------------------------- */
 @theme {
-  --color-bg: oklch(0.21 0.012 265);
-  --color-bg-raised: oklch(0.25 0.014 265);
-  --color-bg-overlay: oklch(0.28 0.016 265);
-  --color-border: oklch(0.32 0.014 265);
-  --color-border-strong: oklch(0.4 0.016 265);
+  --color-vermilion: #e64a2e;
+  --color-ink: #1a1813;
+  --color-paper: #f1ecdf;
+  --color-surface: #fcfaf3;
+  --color-highlight: #f5c518;
+  --color-sage: #3e6b3a;
+  --color-muted: #6e6a5c;
 
-  --color-text: oklch(0.96 0.005 265);
-  --color-text-muted: oklch(0.74 0.012 265);
-  --color-text-faint: oklch(0.58 0.012 265);
+  --color-bg: #f1ecdf;
+  --color-bg-raised: #ede7d8;
+  --color-bg-overlay: #fcfaf3;
+  --color-border: #e7e0d0;
+  --color-border-strong: #ded7c6;
 
-  --color-accent: oklch(0.72 0.16 145);
-  --color-accent-soft: oklch(0.72 0.16 145 / 0.14);
-  --color-accent-contrast: oklch(0.18 0.02 265);
+  --color-text: #1a1813;
+  --color-text-body: #3a352a;
+  --color-text-muted: #6e6a5c;
+  --color-text-faint: #8a8475;
 
-  --color-warn: oklch(0.78 0.15 75);
-  --color-danger: oklch(0.66 0.2 25);
+  --color-accent: #e64a2e;
+  --color-accent-soft: rgb(230 74 46 / 0.1);
+  --color-accent-contrast: #ffffff;
 
-  --radius-card: 0.875rem;
+  --color-warn: #9a6b16;
+  --color-danger: #b23a1e;
+
+  --color-status-inbox-bg: #ece8dc;
+  --color-status-inbox-text: #6e6a5c;
+  --color-status-brewing-bg: #f6e6c5;
+  --color-status-brewing-text: #9a6b16;
+  --color-status-ready-bg: #dcebd6;
+  --color-status-ready-text: #3e6b3a;
+  --color-status-producing-bg: #f8dbd2;
+  --color-status-producing-text: #b23a1e;
+  --color-status-shipped-bg: #d7e3e8;
+  --color-status-shipped-text: #34606f;
+
+  --color-tag-bg: #ede8db;
+  --color-tag-text: #56503f;
+
+  --radius-card: 1rem;
   --radius-control: 0.625rem;
+  --radius-button: 0.625rem;
 
-  --font-sans:
-    'Inter', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --font-display: 'Bricolage Grotesque', ui-sans-serif, system-ui, sans-serif;
+  --font-sans: 'Hanken Grotesk', ui-sans-serif, system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, monospace;
 
-  /* macOS overlay title bar — clears the traffic-light buttons */
   --spacing-titlebar: 3.25rem;
+
+  --shadow-card: 0 1px 2px rgb(26 24 19 / 0.04), 0 14px 30px -22px rgb(26 24 19 / 0.3);
+  --shadow-button-primary: 0 6px 16px -8px rgb(230 74 46 / 0.7);
 }
 
-/* Light theme overrides applied when <html> is NOT .dark */
-:root:not(.dark) {
-  --color-bg: oklch(0.98 0.004 265);
-  --color-bg-raised: oklch(1 0 0);
-  --color-bg-overlay: oklch(0.99 0.003 265);
-  --color-border: oklch(0.9 0.006 265);
-  --color-border-strong: oklch(0.83 0.008 265);
+:root.dark {
+  --color-bg: #16150f;
+  --color-bg-raised: #211f18;
+  --color-bg-overlay: #26241c;
+  --color-border: #2f2c22;
+  --color-border-strong: #3a352a;
 
-  --color-text: oklch(0.24 0.014 265);
-  --color-text-muted: oklch(0.46 0.012 265);
-  --color-text-faint: oklch(0.62 0.01 265);
+  --color-text: #ece7d9;
+  --color-text-body: #d4cfc0;
+  --color-text-muted: #9a9486;
+  --color-text-faint: #5f5b4d;
 
-  --color-accent-contrast: oklch(0.99 0 0);
+  --color-accent-soft: rgb(230 74 46 / 0.16);
+  --color-tag-bg: #26241c;
+  --color-tag-text: #9a9486;
 }
 
 html,
@@ -54,6 +82,12 @@ body {
 
 body {
   background-color: var(--color-bg);
+  background-image: radial-gradient(
+    circle at 1px 1px,
+    rgb(26 24 19 / 0.05) 1px,
+    transparent 0
+  );
+  background-size: 24px 24px;
   color: var(--color-text);
   font-family: var(--font-sans);
   -webkit-font-smoothing: antialiased;
@@ -61,7 +95,14 @@ body {
   overflow: hidden;
 }
 
-/* Calm, consistent focus ring for keyboard users. */
+.dark body {
+  background-image: radial-gradient(
+    circle at 1px 1px,
+    rgb(236 231 217 / 0.04) 1px,
+    transparent 0
+  );
+}
+
 :focus-visible {
   outline: 2px solid var(--color-accent);
   outline-offset: 2px;
@@ -69,15 +110,406 @@ body {
 }
 
 ::selection {
-  background: var(--color-accent-soft);
+  background: rgb(230 74 46 / 0.22);
 }
 
-/* Reserve space under the overlay title bar (macOS traffic lights). */
 .titlebar-inset {
   height: var(--spacing-titlebar);
   flex-shrink: 0;
 }
+
 * {
   scrollbar-width: thin;
   scrollbar-color: var(--color-border-strong) transparent;
+}
+
+/* ----- Typography --------------------------------------------------------- */
+.font-display {
+  font-family: var(--font-display);
+}
+
+.font-mono {
+  font-family: var(--font-mono);
+}
+
+.heading-display {
+  font-family: var(--font-display);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  text-wrap: balance;
+}
+
+.heading-page {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.375rem;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+}
+
+.meta-label {
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+  color: var(--color-text-faint);
+  letter-spacing: 0.04em;
+}
+
+/* ----- Surfaces ----------------------------------------------------------- */
+.card {
+  border-radius: var(--radius-card);
+  border: 1px solid var(--color-border);
+  background: var(--color-surface);
+  box-shadow: var(--shadow-card);
+}
+
+.card-flat {
+  border-radius: var(--radius-card);
+  border: 1px solid var(--color-border);
+  background: var(--color-surface);
+}
+
+.card-ready {
+  border: 1.5px solid var(--color-accent);
+  box-shadow: 0 0 0 4px rgb(230 74 46 / 0.08);
+}
+
+.dark .card,
+.dark .card-flat {
+  background: var(--color-bg-raised);
+}
+
+/* ----- Buttons ------------------------------------------------------------ */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.375rem;
+  border-radius: var(--radius-button);
+  font-family: var(--font-sans);
+  font-weight: 600;
+  font-size: 0.875rem;
+  line-height: 1;
+  padding: 0.625rem 1.125rem;
+  transition:
+    opacity 0.15s,
+    background-color 0.15s,
+    border-color 0.15s;
+  cursor: pointer;
+}
+
+.btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.btn-primary {
+  border: none;
+  background: var(--color-accent);
+  color: var(--color-accent-contrast);
+  box-shadow: var(--shadow-button-primary);
+}
+
+.btn-primary:hover:not(:disabled) {
+  filter: brightness(1.04);
+}
+
+.btn-secondary {
+  border: 1px solid #d8d0be;
+  background: transparent;
+  color: var(--color-text);
+}
+
+.dark .btn-secondary {
+  border-color: var(--color-border-strong);
+}
+
+.btn-secondary:hover:not(:disabled) {
+  border-color: var(--color-border-strong);
+  background: rgb(26 24 19 / 0.03);
+}
+
+.btn-tertiary {
+  border: none;
+  background: transparent;
+  color: var(--color-text-muted);
+  padding-inline: 0.75rem;
+}
+
+.btn-tertiary:hover:not(:disabled) {
+  color: var(--color-text);
+}
+
+.btn-sm {
+  font-size: 0.8125rem;
+  padding: 0.4375rem 0.875rem;
+  border-radius: 0.5rem;
+}
+
+/* ----- Form controls ------------------------------------------------------ */
+.field {
+  width: 100%;
+  border-radius: var(--radius-control);
+  border: 1px solid var(--color-border);
+  background: #ffffff;
+  color: var(--color-text-body);
+  font-family: var(--font-sans);
+  font-size: 0.875rem;
+  padding: 0.625rem 0.875rem;
+}
+
+.dark .field {
+  background: var(--color-bg-overlay);
+  color: var(--color-text);
+}
+
+.field::placeholder {
+  color: var(--color-text-faint);
+}
+
+.field:focus {
+  outline: none;
+  border-color: var(--color-accent);
+  box-shadow: 0 0 0 4px rgb(230 74 46 / 0.1);
+}
+
+.field-note {
+  border-width: 1.5px;
+  border-color: var(--color-accent);
+  box-shadow: 0 0 0 4px rgb(230 74 46 / 0.1);
+}
+
+.search-field {
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+  border-radius: 0.6875rem;
+  border: 1px solid #e2daca;
+  background: #ffffff;
+  padding: 0.625rem 0.9375rem;
+}
+
+.dark .search-field {
+  border-color: var(--color-border);
+  background: var(--color-bg-raised);
+}
+
+.search-field input {
+  min-width: 0;
+  flex: 1;
+  border: none;
+  background: transparent;
+  font-size: 0.875rem;
+  color: var(--color-text-body);
+  outline: none;
+}
+
+.dark .search-field input {
+  color: var(--color-text);
+}
+
+.search-field input::placeholder {
+  color: var(--color-text-faint);
+}
+
+.link-field {
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+  border-radius: 0.5625rem;
+  background: #f7f3e9;
+  padding: 0.5625rem 0.75rem;
+}
+
+.dark .link-field {
+  background: var(--color-bg-overlay);
+}
+
+/* ----- Tags & status ------------------------------------------------------ */
+.tag {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 0.4375rem;
+  background: var(--color-tag-bg);
+  color: var(--color-tag-text);
+  font-family: var(--font-mono);
+  font-size: 0.78125rem;
+  padding: 0.3125rem 0.6875rem;
+}
+
+.tag-filter {
+  border-radius: 999px;
+  border: 1px solid var(--color-border);
+  background: transparent;
+  color: var(--color-text-muted);
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  padding: 0.3125rem 0.75rem;
+  cursor: pointer;
+  transition:
+    background-color 0.15s,
+    border-color 0.15s,
+    color 0.15s;
+}
+
+.tag-filter:hover {
+  color: var(--color-text);
+}
+
+.tag-filter-active {
+  border-color: var(--color-accent);
+  background: var(--color-accent-soft);
+  color: var(--color-text);
+}
+
+.status-chip {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 999px;
+  font-size: 0.78125rem;
+  font-weight: 600;
+  padding: 0.1875rem 0.625rem;
+  text-transform: lowercase;
+}
+
+.status-inbox {
+  background: var(--color-status-inbox-bg);
+  color: var(--color-status-inbox-text);
+}
+
+.status-brewing {
+  background: var(--color-status-brewing-bg);
+  color: var(--color-status-brewing-text);
+}
+
+.status-ready {
+  background: var(--color-status-ready-bg);
+  color: var(--color-status-ready-text);
+}
+
+.status-producing {
+  background: var(--color-status-producing-bg);
+  color: var(--color-status-producing-text);
+}
+
+.status-shipped {
+  background: var(--color-status-shipped-bg);
+  color: var(--color-status-shipped-text);
+}
+
+.status-archived {
+  background: var(--color-status-inbox-bg);
+  color: var(--color-status-inbox-text);
+}
+
+/* ----- Note highlight (reserved for saved notes) -------------------------- */
+.note-highlight {
+  background: linear-gradient(180deg, transparent 58%, rgb(245 197 24 / 0.55) 58%);
+  padding-inline: 1px;
+}
+
+.note-emphasis {
+  color: var(--color-text-body);
+}
+
+.dark .note-emphasis {
+  color: var(--color-text-body);
+}
+
+/* ----- Brand mark --------------------------------------------------------- */
+.brand-mark {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.4375rem;
+  background: var(--color-ink);
+  color: var(--color-accent);
+  font-family: var(--font-mono);
+  font-weight: 600;
+  flex-shrink: 0;
+}
+
+.brand-wordmark {
+  font-family: var(--font-display);
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+.brand-slash {
+  color: var(--color-accent);
+}
+
+/* ----- Nav ---------------------------------------------------------------- */
+.nav-item {
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+  border-radius: 0.5625rem;
+  padding: 0.5625rem 0.75rem;
+  font-size: 0.84375rem;
+  color: #56503f;
+  transition:
+    background-color 0.15s,
+    color 0.15s;
+}
+
+.dark .nav-item {
+  color: var(--color-text-muted);
+}
+
+.nav-item:hover {
+  color: var(--color-text);
+}
+
+.nav-item-active {
+  background: var(--color-ink);
+  color: var(--color-paper);
+  font-weight: 600;
+}
+
+.dark .nav-item-active {
+  background: var(--color-accent);
+  color: #ffffff;
+}
+
+.nav-badge {
+  margin-left: auto;
+  border-radius: 999px;
+  background: var(--color-accent);
+  color: #ffffff;
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  padding: 0.0625rem 0.4375rem;
+}
+
+/* ----- Library dark surface ----------------------------------------------- */
+.surface-library {
+  --color-bg: #16150f;
+  --color-bg-raised: #211f18;
+  --color-bg-overlay: #26241c;
+  --color-border: #2f2c22;
+  --color-border-strong: #3a352a;
+  --color-text: #ece7d9;
+  --color-text-body: #d4cfc0;
+  --color-text-muted: #9a9486;
+  --color-text-faint: #5f5b4d;
+}
+
+.surface-library .card,
+.surface-library .card-flat {
+  background: var(--color-bg-raised);
+}
+
+.surface-library .field {
+  background: var(--color-bg-raised);
+  color: var(--color-text);
+}
+
+/* ----- Toast / status banner ---------------------------------------------- */
+.banner {
+  border-radius: var(--radius-control);
+  border: 1px solid var(--color-border);
+  background: var(--color-bg-overlay);
+  padding: 0.75rem 1rem;
+  font-size: 0.875rem;
+  color: var(--color-text-muted);
 }

@@ -23,9 +23,9 @@
 {:else}
   <div class="grid gap-6 lg:grid-cols-2">
     <section class="space-y-3">
-      <header class="flex items-center justify-between">
-        <h2 class="text-sm font-medium text-text-muted">Brewing</h2>
-        <span class="text-xs text-text-faint">{brewing.length}</span>
+      <header class="flex items-center gap-2">
+        <span class="status-chip status-brewing">brewing</span>
+        <span class="font-mono text-[0.6875rem] text-text-faint">{brewing.length}</span>
       </header>
       {#if brewing.length === 0}
         <p
@@ -34,13 +34,13 @@
           Nothing brewing yet.
         </p>
       {:else}
-        <ul class="space-y-3" role="list">
+        <ul class="space-y-2.5" role="list">
           {#each brewing as row (row.item.id)}
             <li class="space-y-2">
               <DevelopIdeaCard {row} />
               <button
                 type="button"
-                class="text-xs text-accent hover:underline"
+                class="btn btn-tertiary btn-sm"
                 onclick={() => onmove?.(row.item.id, 'ready')}
               >
                 Mark ready
@@ -52,9 +52,9 @@
     </section>
 
     <section class="space-y-3">
-      <header class="flex items-center justify-between">
-        <h2 class="text-sm font-medium text-text-muted">Ready to produce</h2>
-        <span class="text-xs text-text-faint">{ready.length}</span>
+      <header class="flex items-center gap-2">
+        <span class="status-chip status-ready">ready</span>
+        <span class="font-mono text-[0.6875rem] text-text-faint">{ready.length}</span>
       </header>
       {#if ready.length === 0}
         <p
@@ -63,13 +63,13 @@
           Ready ideas appear here when you are set to produce them.
         </p>
       {:else}
-        <ul class="space-y-3" role="list">
+        <ul class="space-y-2.5" role="list">
           {#each ready as row (row.item.id)}
             <li class="space-y-2">
-              <DevelopIdeaCard {row} />
+              <DevelopIdeaCard {row} ready />
               <button
                 type="button"
-                class="text-xs text-text-muted hover:text-text hover:underline"
+                class="btn btn-tertiary btn-sm"
                 onclick={() => onmove?.(row.item.id, 'brewing')}
               >
                 Move back to brewing

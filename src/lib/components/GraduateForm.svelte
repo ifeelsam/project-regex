@@ -36,36 +36,30 @@
   }
 </script>
 
-<section class="rounded-[var(--radius-card)] border border-accent/30 bg-accent-soft p-5">
-  <h3 class="text-sm font-medium">Produce this</h3>
+<section class="card-ready rounded-[var(--radius-card)] bg-white p-5 dark:bg-bg-raised">
+  <h3 class="text-sm font-semibold">Produce this</h3>
   <p class="mt-1 text-sm text-text-muted">
     Graduate this ready idea into a project. Its references come with it.
   </p>
 
   <div class="mt-4 space-y-3">
     <label class="block">
-      <span class="mb-1 block text-xs text-text-faint">Project title</span>
-      <input
-        class="w-full rounded-[var(--radius-control)] border border-border bg-bg px-3 py-2 text-sm"
-        bind:value={title}
-      />
+      <span class="meta-label mb-1 block">Project title</span>
+      <input class="field" bind:value={title} />
     </label>
 
     <label class="block">
-      <span class="mb-1 block text-xs text-text-faint">Brief</span>
+      <span class="meta-label mb-1 block">Brief</span>
       <textarea
-        class="min-h-20 w-full rounded-[var(--radius-control)] border border-border bg-bg px-3 py-2 text-sm"
+        class="field min-h-20 leading-relaxed"
         placeholder="What are you making, and for whom?"
         bind:value={brief}
       ></textarea>
     </label>
 
     <label class="block">
-      <span class="mb-1 block text-xs text-text-faint">Format</span>
-      <select
-        class="w-full rounded-[var(--radius-control)] border border-border bg-bg px-3 py-2 text-sm"
-        bind:value={format}
-      >
+      <span class="meta-label mb-1 block">Format</span>
+      <select class="field" bind:value={format}>
         <option value="video">Video</option>
         <option value="article">Article</option>
         <option value="other">Other</option>
@@ -78,11 +72,11 @@
 
     <button
       type="button"
-      class="rounded-[var(--radius-control)] bg-accent px-4 py-2 text-sm font-medium text-accent-contrast disabled:opacity-40"
+      class="btn btn-primary w-full sm:w-auto"
       disabled={busy || !title.trim()}
       onclick={produce}
     >
-      {busy ? 'Creating project…' : 'Produce this'}
+      {busy ? 'Creating project…' : 'Produce this →'}
     </button>
   </div>
 </section>

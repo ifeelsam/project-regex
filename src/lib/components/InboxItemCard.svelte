@@ -2,6 +2,7 @@
   import { convertFileSrc, invoke } from '@tauri-apps/api/core';
   import { openUrl } from '@tauri-apps/plugin-opener';
   import type { Item, ItemStatus, Tag } from '$lib/api';
+  import { statusChipClass } from '$lib/status';
 
   let {
     row,
@@ -25,6 +26,12 @@
     } catch {
       return null;
     }
+  }
+
+  function thumbGradient(platform: string) {
+    if (platform === 'manual') return 'from-[#F3EEE1] to-[#E8E2D4]';
+    if (platform.includes('twitter') || platform === 'x') return 'from-[#3E6B3A] to-[#2c5128]';
+    return 'from-[#E64A2E] to-[#C13A1F]';
   }
 
   async function openOriginal() {
@@ -59,92 +66,99 @@
   }
 </script>
 
-<article class="rounded-[var(--radius-card)] border border-border bg-bg-raised p-4">
-  <div class="flex gap-4">
+<article class="card-flat overflow-hidden bg-white dark:bg-bg-raised">
+  <div class="flex gap-3 p-3.5">
     {#if thumbSrc(item.thumbnail_path)}
       <img
         src={thumbSrc(item.thumbnail_path)}
         alt=""
-        class="size-16 shrink-0 rounded-[var(--radius-control)] object-cover"
+        class="size-[3.375rem] shrink-0 rounded-lg object-cover"
       />
     {:else}
       <div
-        class="size-16 shrink-0 rounded-[var(--radius-control)] border border-border bg-bg-overlay"
+        class={[
+          'flex size-[3.375rem] shrink-0 items-center justify-center rounded-lg bg-gradient-to-br',
+          thumbGradient(item.platform)
+        ]}
         aria-hidden="true"
-      ></div>
+      >
+        {#if item.platform === 'manual'}
+          <span class="font-mono text-lg text-[#CFC7B4]">.*</span>
+        {/if}
+      </div>
     {/if}
 
     <div class="min-w-0 flex-1">
       <div class="flex flex-wrap items-start justify-between gap-2">
         <div class="min-w-0">
-          <h3 class="truncate text-sm font-medium">
+          <h3 class="truncate text-[0.84375rem] font-semibold leading-snug">
             {item.title || item.note.slice(0, 72) || 'Untitled'}
           </h3>
           {#if item.author}
-            <p class="mt-0.5 text-xs text-text-faint">{item.author}</p>
+            <p class="mt-0.5 font-mono text-[0.6875rem] text-text-faint">
+              {item.author}{#if item.platform !== 'manual'}
+                · {item.platform}{/if}
+            </p>
+          {:else if item.platform === 'manual'}
+            <p class="mt-0.5 font-mono text-[0.6875rem] text-text-faint">pure thought</p>
           {/if}
         </div>
-        <span class="rounded-full border border-border px-2 py-0.5 text-xs text-text-muted">
+        <span class={['status-chip shrink-0', statusChipClass(item.status)]}>
           {item.status}
         </span>
       </div>
 
       {#if editing}
-        <textarea
-          class="mt-3 min-h-20 w-full rounded-[var(--radius-control)] border border-border bg-bg px-3 py-2 text-sm"
-          bind:value={draftNote}
-        ></textarea>
+        <textarea class="field mt-3 min-h-20 text-sm" bind:value={draftNote}></textarea>
         <div class="mt-2 flex gap-2">
           <button
             type="button"
-            class="rounded-[var(--radius-control)] bg-accent px-3 py-1.5 text-xs font-medium text-accent-contrast"
+            class="btn btn-primary btn-sm"
             disabled={busy}
-            onclick={saveNote}>Save note</button
+            onclick={saveNote}
           >
+            Save note
+          </button>
           <button
             type="button"
-            class="rounded-[var(--radius-control)] border border-border px-3 py-1.5 text-xs"
+            class="btn btn-secondary btn-sm"
             onclick={() => (editing = false)}>Cancel</button
           >
         </div>
       {:else}
-        <p class="mt-2 text-sm leading-relaxed text-text-muted">{item.note}</p>
+        <p class="note-emphasis mt-2 line-clamp-2 text-xs leading-relaxed">
+          <span class="note-highlight">{item.note}</span>
+        </p>
       {/if}
 
       {#if tags.length}
-        <div class="mt-3 flex flex-wrap gap-1.5">
+        <div class="mt-2.5 flex flex-wrap gap-1.5">
           {#each tags as tag (tag.id)}
-            <span class="rounded-full bg-accent-soft px-2 py-0.5 text-xs text-text"
-              >{tag.name}</span
-            >
+            <span class="tag">#{tag.name}</span>
           {/each}
         </div>
       {/if}
     </div>
   </div>
 
-  <div class="mt-4 flex flex-wrap gap-2 border-t border-border pt-3">
+  <div class="flex flex-wrap gap-2 border-t border-border px-3.5 py-2.5">
     {#if item.url}
-      <button
-        type="button"
-        class="rounded-[var(--radius-control)] border border-border px-3 py-1.5 text-xs text-text-muted hover:text-text"
-        onclick={openOriginal}>Open original</button
-      >
+      <button type="button" class="btn btn-tertiary btn-sm" onclick={openOriginal}>
+        Open original
+      </button>
     {/if}
+    <button type="button" class="btn btn-tertiary btn-sm" onclick={startEdit}>
+      Edit note
+    </button>
     <button
       type="button"
-      class="rounded-[var(--radius-control)] border border-border px-3 py-1.5 text-xs text-text-muted hover:text-text"
-      onclick={startEdit}>Edit note</button
-    >
-    <button
-      type="button"
-      class="rounded-[var(--radius-control)] border border-border px-3 py-1.5 text-xs text-text-muted hover:text-text"
+      class="btn btn-tertiary btn-sm"
       disabled={busy}
       onclick={() => move('brewing')}>Move to develop</button
     >
     <button
       type="button"
-      class="rounded-[var(--radius-control)] border border-border px-3 py-1.5 text-xs text-text-muted hover:text-text"
+      class="btn btn-tertiary btn-sm"
       disabled={busy}
       onclick={() => move('archived')}>Archive</button
     >

@@ -1,7 +1,12 @@
 <script lang="ts">
   import { listen } from '@tauri-apps/api/event';
   import { onMount } from 'svelte';
-  import { api, type Breakdown, type BreakdownProgress, type MediaToolsStatus } from '$lib/api';
+  import {
+    api,
+    type Breakdown,
+    type BreakdownProgress,
+    type MediaToolsStatus
+  } from '$lib/api';
 
   let {
     projectId,
@@ -74,8 +79,8 @@
   });
 </script>
 
-<section class="rounded-[var(--radius-card)] border border-border bg-bg-raised p-5">
-  <h3 class="text-sm font-medium">Breakdown</h3>
+<section class="card-flat p-5">
+  <h3 class="text-sm font-semibold">Breakdown</h3>
   <p class="mt-1 text-sm text-text-muted">
     Extract frames, clips, audio, a transcript, and structure — only after you commit to
     producing.
@@ -89,7 +94,11 @@
   {/if}
 
   <label class="mt-4 flex items-start gap-2 text-sm text-text-muted">
-    <input type="checkbox" class="mt-0.5" bind:checked={confirmed} />
+    <input
+      type="checkbox"
+      class="mt-0.5 accent-[var(--color-accent)]"
+      bind:checked={confirmed}
+    />
     <span
       >I confirm this is for personal use — content I have the right to reference, not
       protected or DRM-locked material.</span
@@ -99,24 +108,20 @@
   <div class="mt-4 flex flex-wrap gap-2">
     <button
       type="button"
-      class="rounded-[var(--radius-control)] bg-accent px-4 py-2 text-sm font-medium text-accent-contrast disabled:opacity-40"
+      class="btn btn-primary"
       disabled={busy || !confirmed || !!active}
       onclick={start}
     >
       {active ? 'Running…' : 'Run breakdown'}
     </button>
     {#if active}
-      <button
-        type="button"
-        class="rounded-[var(--radius-control)] border border-border px-4 py-2 text-sm"
-        onclick={cancel}>Cancel</button
-      >
+      <button type="button" class="btn btn-secondary" onclick={cancel}>Cancel</button>
     {/if}
   </div>
 
   {#if progress && (progress.step !== 'done' || active)}
     <div class="mt-4 space-y-2">
-      <div class="flex items-center justify-between text-xs text-text-faint">
+      <div class="flex items-center justify-between font-mono text-xs text-text-faint">
         <span class="capitalize">{progress.step}</span>
         <span>{Math.round(progress.progress * 100)}%</span>
       </div>
@@ -131,7 +136,9 @@
   {/if}
 
   {#if latest?.status === 'done'}
-    <p class="mt-3 text-sm text-accent">Breakdown complete — assets are in the library.</p>
+    <p class="mt-3 text-sm font-medium text-sage">
+      Breakdown complete — assets are in the library.
+    </p>
   {:else if latest?.status === 'failed' && latest.error}
     <p class="mt-3 text-sm text-danger">{latest.error}</p>
   {/if}

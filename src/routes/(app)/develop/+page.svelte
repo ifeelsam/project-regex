@@ -36,10 +36,7 @@
 
 <div class="mx-auto max-w-5xl">
   {#if message}
-    <p
-      class="mb-4 rounded-[var(--radius-control)] border border-border bg-bg-overlay px-4 py-3 text-sm text-text-muted"
-      role="status"
-    >
+    <p class="banner mb-4" role="status">
       {message}
     </p>
   {/if}

@@ -11,6 +11,10 @@
     "mtime": 1781725120.0210917,
     "hash": "b9c0d1f116fd39d5f2a115f3f002c6dd"
   },
+  "/Users/sam/Projects/project-regex/design/support.js": {
+    "mtime": 1781849397.322313,
+    "hash": "dcf7a0c76052ff1397a61940905a3a3a"
+  },
   "/Users/sam/Projects/project-regex/src-tauri/build.rs": {
     "mtime": 1781758100.306023,
     "hash": "a052d2a4589e8f27c2c7d07021a711d9"
@@ -135,57 +139,61 @@
     "mtime": 1781729048.5552058,
     "hash": "e6bfd23b41ec0d3e79dbe55b1a1814ff"
   },
+  "/Users/sam/Projects/project-regex/src/lib/status.ts": {
+    "mtime": 1781849580.4730098,
+    "hash": "e206857c38556f136607cb2169fbc567"
+  },
   "/Users/sam/Projects/project-regex/src/lib/nav.ts": {
     "mtime": 1781725071.9832773,
     "hash": "1956c306c19f4f620a9a0ebd6ee349d1"
   },
   "/Users/sam/Projects/project-regex/src/lib/theme.svelte.ts": {
-    "mtime": 1781725073.3588102,
-    "hash": "e3e6c7e40a262c10d2fbe8cfb38852dc"
+    "mtime": 1781849518.7319071,
+    "hash": "afcc8562714c05710d8827820511312c"
   },
   "/Users/sam/Projects/project-regex/src/lib/api.ts": {
     "mtime": 1781758123.1832244,
     "hash": "2e5b6153d6b744868bf91d261c0893fe"
   },
   "/Users/sam/Projects/project-regex/src/lib/components/EmptyState.svelte": {
-    "mtime": 1781725075.0408087,
-    "hash": "68e9a5d15db6b630a8e868b94407503f"
+    "mtime": 1781849525.4482417,
+    "hash": "722d22a47fd02acef08e66230a2b1ea4"
   },
   "/Users/sam/Projects/project-regex/src/lib/components/BreakdownPanel.svelte": {
-    "mtime": 1781758120.730604,
-    "hash": "a7b0529df613220efdb0de51058e7fd2"
+    "mtime": 1781849573.124585,
+    "hash": "f22711e7e1da8bab4b5e7f14eb1e2c94"
   },
   "/Users/sam/Projects/project-regex/src/lib/components/DevelopBoard.svelte": {
-    "mtime": 1781757526.863978,
-    "hash": "c3d9df5c409ddd62fbf8fa68196a1a6d"
+    "mtime": 1781849536.353905,
+    "hash": "d9f5c591b7ff6765b8ac162dbb803193"
   },
   "/Users/sam/Projects/project-regex/src/lib/components/GraduateForm.svelte": {
-    "mtime": 1781757655.5141177,
-    "hash": "24fb65c5cca9f0e21dc188788956c5b3"
+    "mtime": 1781849538.0238676,
+    "hash": "c7be0338bd0406e7fcd746b432b3eda7"
   },
   "/Users/sam/Projects/project-regex/src/lib/components/DevelopIdeaCard.svelte": {
-    "mtime": 1781757526.8681452,
-    "hash": "dfa981d90a72770d2847848542829171"
+    "mtime": 1781849534.5095232,
+    "hash": "23550616f1c950b6279439dea0ab4373"
   },
   "/Users/sam/Projects/project-regex/src/lib/components/InboxItemCard.svelte": {
-    "mtime": 1781729129.4650307,
-    "hash": "51077b8bbf7cbd56df8b53c7b395951c"
+    "mtime": 1781849573.1756535,
+    "hash": "11a9482852b0e7ef7f26ee5a5fa328c8"
   },
   "/Users/sam/Projects/project-regex/src/lib/components/Sidebar.svelte": {
-    "mtime": 1781757894.811817,
-    "hash": "48d50b0b249b4d71e8ccec205db38581"
+    "mtime": 1781849573.1889143,
+    "hash": "408f2f7e092fbc5f7f84d0746eb3a10e"
   },
   "/Users/sam/Projects/project-regex/src/lib/components/ProjectCard.svelte": {
-    "mtime": 1781757657.1208353,
-    "hash": "dd47e26e656c984af09dd6d1ad409cfb"
+    "mtime": 1781849539.09641,
+    "hash": "f622a874688383711aaf955bc3edf274"
   },
   "/Users/sam/Projects/project-regex/src/lib/components/Shell.svelte": {
-    "mtime": 1781757894.811817,
-    "hash": "8956ef0f66ba52c2dc4e51c585881265"
+    "mtime": 1781849573.1841643,
+    "hash": "b11bf9c4a89a85883ae6018ea6e01ad6"
   },
   "/Users/sam/Projects/project-regex/src/lib/components/CaptureForm.svelte": {
-    "mtime": 1781729129.4514806,
-    "hash": "ca4bb6b6932360c172682a4b50b03740"
+    "mtime": 1781849585.1826124,
+    "hash": "992c1e87b10ad639cd8014cca2782d39"
   },
   "/Users/sam/Projects/project-regex/src/routes/+layout.ts": {
     "mtime": 1781719704.5851502,
@@ -200,40 +208,40 @@
     "hash": "9a4cdf2ff1df514dec994b584a1a1d6a"
   },
   "/Users/sam/Projects/project-regex/src/routes/(app)/+layout.svelte": {
-    "mtime": 1781725104.41994,
-    "hash": "85331ce49e157a9c426652d0eca6dff5"
+    "mtime": 1781849524.0482821,
+    "hash": "c0f5eb3d2d88aa66b4ca81b9602f3735"
   },
   "/Users/sam/Projects/project-regex/src/routes/(app)/settings/+page.svelte": {
-    "mtime": 1781728262.5098257,
-    "hash": "5fbbe7961642231ba50473106c7458da"
+    "mtime": 1781849549.0557265,
+    "hash": "699561275152863d88e089c8fc868a4d"
   },
   "/Users/sam/Projects/project-regex/src/routes/(app)/develop/+page.svelte": {
-    "mtime": 1781757510.0822601,
-    "hash": "6b574d0feac9698156cc811a67a934a3"
+    "mtime": 1781849549.2765849,
+    "hash": "85e078072506a57f075a5a8f94adde39"
   },
   "/Users/sam/Projects/project-regex/src/routes/(app)/develop/[id]/+page.svelte": {
-    "mtime": 1781757668.7335272,
-    "hash": "7d84fd115e3b84a82bfabf4f883ea2a0"
+    "mtime": 1781849573.2732632,
+    "hash": "c1a830a8a35ac5fea73935c79b39728e"
   },
   "/Users/sam/Projects/project-regex/src/routes/(app)/inbox/+page.svelte": {
-    "mtime": 1781729135.3651507,
-    "hash": "ecf2d41a497eac404f0ec677889fdaac"
+    "mtime": 1781849547.3345342,
+    "hash": "c847606e8cd3aacb49adb2fa6f9ac222"
   },
   "/Users/sam/Projects/project-regex/src/routes/(app)/projects/+page.svelte": {
-    "mtime": 1781757646.5179565,
-    "hash": "d106265cfda9277a7f24d18cfa829714"
+    "mtime": 1781849549.5010056,
+    "hash": "afb651e99492a1126093c347dd29f135"
   },
   "/Users/sam/Projects/project-regex/src/routes/(app)/projects/[id]/+page.svelte": {
-    "mtime": 1781758125.3790567,
-    "hash": "36fae7d395d9cac8c87db089c36d3d43"
+    "mtime": 1781849573.3060367,
+    "hash": "e828b6693c796b00fa0ae22cc709a165"
   },
   "/Users/sam/Projects/project-regex/src/routes/(app)/library/+page.svelte": {
-    "mtime": 1781725085.8962936,
-    "hash": "103ddd52cb179c089b21aae78c1136f4"
+    "mtime": 1781849548.0938482,
+    "hash": "d6d503b86fcae433882155aff149bb35"
   },
   "/Users/sam/Projects/project-regex/src/routes/(app)/debug/+page.svelte": {
-    "mtime": 1781728262.500929,
-    "hash": "c221e6e80345d7c3405c30811370e492"
+    "mtime": 1781849573.2501793,
+    "hash": "8bdc35fe7891786d0e17184ba3ab25a5"
   },
   "/Users/sam/Projects/project-regex/PROGRESS.md": {
     "mtime": 1781758135.307692,
@@ -243,208 +251,20 @@
     "mtime": 1781719858.180989,
     "hash": "2d51280dfbe8e6b49acb90f75855fa63"
   },
+  "/Users/sam/Projects/project-regex/design/Project Regex Brand.dc.html": {
+    "mtime": 1781849397.3189268,
+    "hash": "b6c0f1bde20f244cc8400a82aee0d82f"
+  },
+  "/Users/sam/Projects/project-regex/design/design.md": {
+    "mtime": 1781849397.321732,
+    "hash": "20e590d07956050a6586c10378251f54"
+  },
   "/Users/sam/Projects/project-regex/docs/media-tools.md": {
     "mtime": 1781758092.1751418,
     "hash": "097c22385cb0cf292de5aae12bfcaf1f"
   },
   "/Users/sam/Projects/project-regex/src/app.html": {
-    "mtime": 1781719661.5752783,
-    "hash": "7b44723c11d44766efe10ef43b43a6f9"
-  },
-  "/Users/sam/Projects/project-regex/static/favicon.png": {
-    "mtime": 1781720005.9391673,
-    "hash": "2fb603d166c7efcbc56f4d9e72a6256b"
-  },
-  "/Users/sam/Projects/project-regex/src-tauri/icons/icon.png": {
-    "mtime": 1781719998.4411724,
-    "hash": "6cf2ec3ac3bd63c1a2d9fcba2d985636"
-  },
-  "/Users/sam/Projects/project-regex/src-tauri/icons/Square30x30Logo.png": {
-    "mtime": 1781719998.2505426,
-    "hash": "e1d52eb2f852a490d5701ed0e45550b3"
-  },
-  "/Users/sam/Projects/project-regex/src-tauri/icons/Square150x150Logo.png": {
-    "mtime": 1781719998.262828,
-    "hash": "585035458ba0fa77b9c85ea814b110c5"
-  },
-  "/Users/sam/Projects/project-regex/src-tauri/icons/StoreLogo.png": {
-    "mtime": 1781719998.2501512,
-    "hash": "9427af225d86a4c6ae9a6c4e78c4d411"
-  },
-  "/Users/sam/Projects/project-regex/src-tauri/icons/Square107x107Logo.png": {
-    "mtime": 1781719998.2566912,
-    "hash": "52862886c2eebc70906a00b4c55e24f6"
-  },
-  "/Users/sam/Projects/project-regex/src-tauri/icons/Square89x89Logo.png": {
-    "mtime": 1781719998.2542303,
-    "hash": "a88229c5fca9069f9e288089137ff813"
-  },
-  "/Users/sam/Projects/project-regex/src-tauri/icons/Square310x310Logo.png": {
-    "mtime": 1781719998.2785308,
-    "hash": "9feedd4dd9abf84db4d49595c17c0af1"
-  },
-  "/Users/sam/Projects/project-regex/src-tauri/icons/Square142x142Logo.png": {
-    "mtime": 1781719998.2596383,
-    "hash": "4b0b94d5943b57d7f4c44f361a95f5e2"
-  },
-  "/Users/sam/Projects/project-regex/src-tauri/icons/128x128.png": {
-    "mtime": 1781719998.4147553,
-    "hash": "2fb603d166c7efcbc56f4d9e72a6256b"
-  },
-  "/Users/sam/Projects/project-regex/src-tauri/icons/Square284x284Logo.png": {
-    "mtime": 1781719998.270024,
-    "hash": "c0a9556b5eaf062e50a399082d283160"
-  },
-  "/Users/sam/Projects/project-regex/src-tauri/icons/32x32.png": {
-    "mtime": 1781719998.410581,
-    "hash": "c1cbfdfb599234ab45bf01b1ea606e38"
-  },
-  "/Users/sam/Projects/project-regex/src-tauri/icons/Square44x44Logo.png": {
-    "mtime": 1781719998.2510748,
-    "hash": "6358469ff1eae17238f15289033a7b17"
-  },
-  "/Users/sam/Projects/project-regex/src-tauri/icons/Square71x71Logo.png": {
-    "mtime": 1781719998.2523975,
-    "hash": "0a0743dc31d686c466ccc597591a82fd"
-  },
-  "/Users/sam/Projects/project-regex/src-tauri/icons/128x128@2x.png": {
-    "mtime": 1781719998.4220119,
-    "hash": "969637536777f7ef5e8592f18a06b42f"
-  },
-  "/Users/sam/Projects/project-regex/src-tauri/icons/64x64.png": {
-    "mtime": 1781719998.411664,
-    "hash": "64c9585b127363c15c97e8845567987d"
-  },
-  "/Users/sam/Projects/project-regex/src-tauri/icons/ios/AppIcon-20x20@3x.png": {
-    "mtime": 1781719998.4436274,
-    "hash": "ae35b23250fc915058dd04593efc618e"
-  },
-  "/Users/sam/Projects/project-regex/src-tauri/icons/ios/AppIcon-512@2x.png": {
-    "mtime": 1781719998.5333192,
-    "hash": "24155d751505cdea443f88bd26f684ee"
-  },
-  "/Users/sam/Projects/project-regex/src-tauri/icons/ios/AppIcon-83.5x83.5@2x.png": {
-    "mtime": 1781719998.4681652,
-    "hash": "927cd44ca0a3900d9b9f7c47b378ec98"
-  },
-  "/Users/sam/Projects/project-regex/src-tauri/icons/ios/AppIcon-20x20@2x.png": {
-    "mtime": 1781719998.4427264,
-    "hash": "012bc89138204ccb6de13cc65a81e43d"
-  },
-  "/Users/sam/Projects/project-regex/src-tauri/icons/ios/AppIcon-29x29@3x.png": {
-    "mtime": 1781719998.4477286,
-    "hash": "a0658f02af89da0877f445508c89b3d1"
-  },
-  "/Users/sam/Projects/project-regex/src-tauri/icons/ios/AppIcon-40x40@2x.png": {
-    "mtime": 1781719998.4509392,
-    "hash": "6bb7f022cc00ef5ce943cc89b61efdc6"
-  },
-  "/Users/sam/Projects/project-regex/src-tauri/icons/ios/AppIcon-60x60@3x.png": {
-    "mtime": 1781719998.4596496,
-    "hash": "47a54452cd0924e43009be866b66a74b"
-  },
-  "/Users/sam/Projects/project-regex/src-tauri/icons/ios/AppIcon-40x40@2x-1.png": {
-    "mtime": 1781719998.449014,
-    "hash": "6bb7f022cc00ef5ce943cc89b61efdc6"
-  },
-  "/Users/sam/Projects/project-regex/src-tauri/icons/ios/AppIcon-20x20@2x-1.png": {
-    "mtime": 1781719998.4418387,
-    "hash": "012bc89138204ccb6de13cc65a81e43d"
-  },
-  "/Users/sam/Projects/project-regex/src-tauri/icons/ios/AppIcon-60x60@2x.png": {
-    "mtime": 1781719998.4559643,
-    "hash": "4d292c895f0dbbb09c0566050ba246b8"
-  },
-  "/Users/sam/Projects/project-regex/src-tauri/icons/ios/AppIcon-76x76@1x.png": {
-    "mtime": 1781719998.461283,
-    "hash": "7d9d0d24b90a725c8bbbe680cf3e2fcc"
-  },
-  "/Users/sam/Projects/project-regex/src-tauri/icons/ios/AppIcon-40x40@3x.png": {
-    "mtime": 1781719998.4536128,
-    "hash": "4d292c895f0dbbb09c0566050ba246b8"
-  },
-  "/Users/sam/Projects/project-regex/src-tauri/icons/ios/AppIcon-29x29@2x.png": {
-    "mtime": 1781719998.446309,
-    "hash": "547c26507d605c2f8127f6be7ce59806"
-  },
-  "/Users/sam/Projects/project-regex/src-tauri/icons/ios/AppIcon-76x76@2x.png": {
-    "mtime": 1781719998.4644382,
-    "hash": "0b440b1b1aaa38bf78aa15106279342d"
-  },
-  "/Users/sam/Projects/project-regex/src-tauri/icons/ios/AppIcon-29x29@1x.png": {
-    "mtime": 1781719998.4453251,
-    "hash": "97df8451eb74dde97fe02ca8a925dec7"
-  },
-  "/Users/sam/Projects/project-regex/src-tauri/icons/ios/AppIcon-40x40@1x.png": {
-    "mtime": 1781719998.4496732,
-    "hash": "012bc89138204ccb6de13cc65a81e43d"
-  },
-  "/Users/sam/Projects/project-regex/src-tauri/icons/ios/AppIcon-20x20@1x.png": {
-    "mtime": 1781719998.44219,
-    "hash": "e4498178932ceaa73246530bc37fd5cc"
-  },
-  "/Users/sam/Projects/project-regex/src-tauri/icons/ios/AppIcon-29x29@2x-1.png": {
-    "mtime": 1781719998.4448996,
-    "hash": "547c26507d605c2f8127f6be7ce59806"
-  },
-  "/Users/sam/Projects/project-regex/src-tauri/icons/android/mipmap-mdpi/ic_launcher_foreground.png": {
-    "mtime": 1781719998.5399754,
-    "hash": "a46fa5c6c6ac5db3d1dcc022c9c21d66"
-  },
-  "/Users/sam/Projects/project-regex/src-tauri/icons/android/mipmap-mdpi/ic_launcher.png": {
-    "mtime": 1781719998.5707564,
-    "hash": "f3b9bba83fdc270db178fe6d32fe6cf2"
-  },
-  "/Users/sam/Projects/project-regex/src-tauri/icons/android/mipmap-mdpi/ic_launcher_round.png": {
-    "mtime": 1781719998.5698786,
-    "hash": "942d07241b30445af7fb8dca661a6cec"
-  },
-  "/Users/sam/Projects/project-regex/src-tauri/icons/android/mipmap-hdpi/ic_launcher_foreground.png": {
-    "mtime": 1781719998.5374584,
-    "hash": "765c9bb1882255d69ba265fa4dc5044d"
-  },
-  "/Users/sam/Projects/project-regex/src-tauri/icons/android/mipmap-hdpi/ic_launcher.png": {
-    "mtime": 1781719998.568969,
-    "hash": "d4aa1889f9832b6e9e56d0cfdacc22bd"
-  },
-  "/Users/sam/Projects/project-regex/src-tauri/icons/android/mipmap-hdpi/ic_launcher_round.png": {
-    "mtime": 1781719998.5681129,
-    "hash": "b464c8019b10b922c67e566baed79c79"
-  },
-  "/Users/sam/Projects/project-regex/src-tauri/icons/android/mipmap-xxxhdpi/ic_launcher_foreground.png": {
-    "mtime": 1781719998.5671175,
-    "hash": "d81ba7ac43b7aa66c946c4ceb12b9819"
-  },
-  "/Users/sam/Projects/project-regex/src-tauri/icons/android/mipmap-xxxhdpi/ic_launcher.png": {
-    "mtime": 1781719998.593119,
-    "hash": "cb38c7de401aff6a1b8d23f61a1a8203"
-  },
-  "/Users/sam/Projects/project-regex/src-tauri/icons/android/mipmap-xxxhdpi/ic_launcher_round.png": {
-    "mtime": 1781719998.5873976,
-    "hash": "60793fcbf20bc308fe6a4bfc28a56073"
-  },
-  "/Users/sam/Projects/project-regex/src-tauri/icons/android/mipmap-xxhdpi/ic_launcher_foreground.png": {
-    "mtime": 1781719998.5537057,
-    "hash": "745edbbc0e31e428fcc5bd405b3f6638"
-  },
-  "/Users/sam/Projects/project-regex/src-tauri/icons/android/mipmap-xxhdpi/ic_launcher.png": {
-    "mtime": 1781719998.5821016,
-    "hash": "5227c06950a4add69ffe66a0153781e4"
-  },
-  "/Users/sam/Projects/project-regex/src-tauri/icons/android/mipmap-xxhdpi/ic_launcher_round.png": {
-    "mtime": 1781719998.5786233,
-    "hash": "bd900f66cdf2b4da4a684b56ca598b80"
-  },
-  "/Users/sam/Projects/project-regex/src-tauri/icons/android/mipmap-xhdpi/ic_launcher_foreground.png": {
-    "mtime": 1781719998.545033,
-    "hash": "b5bdfd0dcd3c47619c868cac506ef21e"
-  },
-  "/Users/sam/Projects/project-regex/src-tauri/icons/android/mipmap-xhdpi/ic_launcher.png": {
-    "mtime": 1781719998.5748389,
-    "hash": "8c281ca5bb405f164b8d1aeba4d01205"
-  },
-  "/Users/sam/Projects/project-regex/src-tauri/icons/android/mipmap-xhdpi/ic_launcher_round.png": {
-    "mtime": 1781719998.572897,
-    "hash": "dfc11e220e4947aee7fbd60e7b9168ef"
+    "mtime": 1781849518.7326179,
+    "hash": "f380bd44350f5deb15b6b88fd006e495"
   }
 }

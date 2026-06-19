@@ -1,10 +1,13 @@
 <script lang="ts">
   import type { Item, Tag } from '$lib/api';
+  import { statusChipClass } from '$lib/status';
 
   let {
-    row
+    row,
+    ready = false
   }: {
     row: { item: Item; tags: Tag[] };
+    ready?: boolean;
   } = $props();
 
   const item = $derived(row.item);
@@ -13,28 +16,29 @@
 
 <a
   href="/develop/{item.id}/"
-  class="block rounded-[var(--radius-card)] border border-border bg-bg-raised p-4 transition-colors hover:border-border-strong"
+  class={[
+    'block rounded-[0.6875rem] border bg-white p-3 transition-colors dark:bg-bg-raised',
+    ready ? 'card-ready' : 'border-border hover:border-border-strong'
+  ]}
 >
   <div class="flex items-start justify-between gap-3">
     <div class="min-w-0">
-      <h3 class="text-sm font-medium leading-snug">{label}</h3>
+      <h3 class="text-[0.8125rem] font-semibold leading-snug">{label}</h3>
       {#if item.note}
-        <p class="mt-1 line-clamp-2 text-xs leading-relaxed text-text-muted">{item.note}</p>
+        <p class="mt-1 line-clamp-2 text-[0.71875rem] leading-relaxed text-text-muted">
+          {item.note}
+        </p>
       {/if}
     </div>
-    <span
-      class="shrink-0 rounded-full border border-border px-2 py-0.5 text-[10px] uppercase tracking-wide text-text-faint"
-    >
+    <span class={['status-chip shrink-0', statusChipClass(item.status)]}>
       {item.status}
     </span>
   </div>
 
   {#if row.tags.length}
-    <div class="mt-3 flex flex-wrap gap-1">
+    <div class="mt-2.5 flex flex-wrap gap-1">
       {#each row.tags as tag (tag.id)}
-        <span class="rounded-full bg-accent-soft px-2 py-0.5 text-[10px] text-text"
-          >{tag.name}</span
-        >
+        <span class="tag">#{tag.name}</span>
       {/each}
     </div>
   {/if}

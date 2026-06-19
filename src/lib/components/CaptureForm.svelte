@@ -61,63 +61,68 @@
   }
 </script>
 
-<section class="rounded-[var(--radius-card)] border border-border bg-bg-raised p-5">
+<section class="card p-4 sm:p-5">
   <div class="mb-4 flex items-center justify-between gap-3">
     <div>
-      <h2 class="text-sm font-medium">Capture</h2>
+      <h2 class="text-sm font-semibold">Capture</h2>
       <p class="mt-1 text-sm text-text-muted">
         Start with why it grabbed you — the link can wait.
       </p>
     </div>
     <button
       type="button"
-      class="rounded-[var(--radius-control)] border border-border px-3 py-1.5 text-xs text-text-muted transition-colors hover:border-border-strong hover:text-text"
+      class="btn btn-secondary btn-sm"
       onclick={() => (thoughtMode = !thoughtMode)}
     >
       {thoughtMode ? 'Add a link' : 'Just a thought'}
     </button>
   </div>
 
-  <div class="space-y-3" onkeydown={onKeydown}>
+  <form class="space-y-3" onkeydown={onKeydown} onsubmit={(e) => e.preventDefault()}>
     {#if !thoughtMode}
-      <label class="block">
-        <span class="sr-only">Link</span>
+      <div class="link-field">
+        <span class="meta-label shrink-0 text-[0.75rem]">paste link</span>
         <input
-          class="w-full rounded-[var(--radius-control)] border border-border bg-bg px-3 py-2.5 text-sm placeholder:text-text-faint"
-          placeholder="Paste a link (optional)"
+          class="min-w-0 flex-1 border-none bg-transparent text-sm text-text-body outline-none"
+          placeholder="Optional — fills in on its own"
           bind:value={url}
         />
-      </label>
+      </div>
     {/if}
 
     <label class="block">
-      <span class="sr-only">Why did this grab you?</span>
+      <span class="mb-2 block text-sm font-semibold">Why did this grab you?</span>
       <textarea
-        class="min-h-28 w-full rounded-[var(--radius-control)] border border-border bg-bg px-3 py-2.5 text-sm placeholder:text-text-faint"
-        placeholder="Why did this grab you? What idea did it spark?"
+        class="field field-note min-h-28 leading-relaxed"
+        placeholder="What idea did it spark?"
         bind:value={note}
       ></textarea>
     </label>
 
-    <label class="block">
-      <span class="sr-only">Tags</span>
+    <div class="flex flex-wrap items-center gap-2">
+      {#each tags
+        .split(',')
+        .map((tag) => tag.trim())
+        .filter(Boolean) as tag (tag)}
+        <span class="tag">#{tag}</span>
+      {/each}
       <input
-        class="w-full rounded-[var(--radius-control)] border border-border bg-bg px-3 py-2.5 text-sm placeholder:text-text-faint"
-        placeholder="Tags — comma separated"
+        class="field max-w-xs flex-1 border-dashed py-2 font-mono text-xs"
+        placeholder="# tags — comma separated"
         bind:value={tags}
       />
-    </label>
+    </div>
 
     <div class="flex items-center justify-between gap-3 pt-1">
-      <p class="text-xs text-text-faint">⌘↵ to save</p>
+      <p class="font-mono text-xs text-text-faint">⌘↵ to save</p>
       <button
         type="button"
-        class="rounded-[var(--radius-control)] bg-accent px-4 py-2 text-sm font-medium text-accent-contrast transition-opacity disabled:opacity-40"
+        class="btn btn-primary"
         disabled={saving || !note.trim()}
         onclick={save}
       >
-        {saving ? 'Saving…' : 'Save'}
+        {saving ? 'Saving…' : 'Save to inbox'}
       </button>
     </div>
-  </div>
+  </form>
 </section>

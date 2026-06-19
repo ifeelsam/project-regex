@@ -5,10 +5,12 @@
   let {
     title,
     description,
+    variant = 'default',
     children
   }: {
     title: string;
     description?: string;
+    variant?: 'default' | 'library';
     children: Snippet;
   } = $props();
 </script>
@@ -16,16 +18,16 @@
 <div class="flex h-screen overflow-hidden bg-bg">
   <Sidebar />
 
-  <div class="flex min-w-0 flex-1 flex-col">
+  <div class={['flex min-w-0 flex-1 flex-col', variant === 'library' && 'surface-library']}>
     <header
       class="flex shrink-0 items-end justify-between border-b border-border px-8 pb-5"
       style="padding-top: var(--spacing-titlebar)"
       data-tauri-drag-region
     >
       <div>
-        <h1 class="text-2xl font-semibold tracking-tight">{title}</h1>
+        <h1 class="heading-page">{title}</h1>
         {#if description}
-          <p class="mt-1 text-sm text-text-muted">{description}</p>
+          <p class="mt-1.5 max-w-prose text-sm text-text-muted text-pretty">{description}</p>
         {/if}
       </div>
     </header>

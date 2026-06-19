@@ -1,5 +1,6 @@
 <script lang="ts">
   import { api, type Item, type ItemStatus, type SearchHit } from '$lib/api';
+  import { statusChipClass } from '$lib/status';
 
   let note = $state('');
   let url = $state('');
@@ -81,35 +82,25 @@
   </p>
 
   {#if message}
-    <p
-      class="rounded-[var(--radius-control)] border border-border bg-bg-raised px-4 py-3 text-sm"
-    >
-      {message}
-    </p>
+    <p class="banner">{message}</p>
   {/if}
 
-  <section
-    class="space-y-3 rounded-[var(--radius-card)] border border-border bg-bg-raised p-5"
-  >
-    <h2 class="text-sm font-medium">Quick capture</h2>
-    <input
-      class="w-full rounded-[var(--radius-control)] border border-border bg-bg px-3 py-2 text-sm"
-      placeholder="Link (optional)"
-      bind:value={url}
-    />
+  <section class="card-flat space-y-3 p-5">
+    <h2 class="text-sm font-semibold">Quick capture</h2>
+    <input class="field" placeholder="Link (optional)" bind:value={url} />
     <textarea
-      class="min-h-24 w-full rounded-[var(--radius-control)] border border-border bg-bg px-3 py-2 text-sm"
+      class="field field-note min-h-24"
       placeholder="Why did this grab you?"
       bind:value={note}
     ></textarea>
     <input
-      class="w-full rounded-[var(--radius-control)] border border-border bg-bg px-3 py-2 text-sm"
+      class="field font-mono text-sm"
       placeholder="Tags (comma separated)"
       bind:value={tags}
     />
     <button
       type="button"
-      class="rounded-[var(--radius-control)] bg-accent px-4 py-2 text-sm font-medium text-accent-contrast disabled:opacity-50"
+      class="btn btn-primary"
       disabled={busy || !note.trim()}
       onclick={capture}
     >
@@ -117,21 +108,17 @@
     </button>
   </section>
 
-  <section
-    class="space-y-3 rounded-[var(--radius-card)] border border-border bg-bg-raised p-5"
-  >
+  <section class="card-flat space-y-3 p-5">
     <div class="flex flex-wrap items-center gap-3">
-      <input
-        class="min-w-48 flex-1 rounded-[var(--radius-control)] border border-border bg-bg px-3 py-2 text-sm"
-        placeholder="Search notes, titles, authors…"
-        bind:value={searchQuery}
-        oninput={() => refresh()}
-      />
-      <select
-        class="rounded-[var(--radius-control)] border border-border bg-bg px-3 py-2 text-sm"
-        bind:value={statusFilter}
-        onchange={() => refresh()}
-      >
+      <label class="search-field min-w-48 flex-1">
+        <span class="font-mono text-[0.8125rem] text-text-faint">/</span>
+        <input
+          placeholder="Search notes, titles, authors…"
+          bind:value={searchQuery}
+          oninput={() => refresh()}
+        />
+      </label>
+      <select class="field w-auto" bind:value={statusFilter} onchange={() => refresh()}>
         <option value="">All statuses</option>
         <option value="inbox">Inbox</option>
         <option value="brewing">Brewing</option>
@@ -145,9 +132,9 @@
       <ul class="space-y-2">
         {#each searchHits as hit (hit.item.id)}
           <li
-            class="rounded-[var(--radius-control)] border border-border bg-bg px-3 py-3 text-sm"
+            class="rounded-[var(--radius-control)] border border-border bg-white px-3 py-3 text-sm dark:bg-bg-overlay"
           >
-            <p class="font-medium">
+            <p class="font-semibold">
               {hit.item.title || hit.item.note.slice(0, 60) || 'Untitled'}
             </p>
             <p class="mt-1 text-text-muted">{hit.snippet}</p>
@@ -158,24 +145,30 @@
       <ul class="space-y-2">
         {#each items as item (item.id)}
           <li
-            class="flex items-start justify-between gap-4 rounded-[var(--radius-control)] border border-border bg-bg px-3 py-3 text-sm"
+            class="flex items-start justify-between gap-4 rounded-[var(--radius-control)] border border-border bg-white px-3 py-3 text-sm dark:bg-bg-overlay"
           >
             <div>
-              <p class="font-medium">{item.title || item.note.slice(0, 60) || 'Untitled'}</p>
+              <p class="font-semibold">{item.title || item.note.slice(0, 60) || 'Untitled'}</p>
               <p class="mt-1 text-text-muted">{item.note}</p>
-              <p class="mt-1 text-xs text-text-faint">{item.status}</p>
+              <span class={['status-chip mt-2', statusChipClass(item.status)]}
+                >{item.status}</span
+              >
             </div>
             <div class="flex shrink-0 flex-col gap-1">
               <button
                 type="button"
-                class="rounded border border-border px-2 py-1 text-xs"
-                onclick={() => move(item, 'brewing')}>Develop</button
+                class="btn btn-secondary btn-sm"
+                onclick={() => move(item, 'brewing')}
               >
+                Develop
+              </button>
               <button
                 type="button"
-                class="rounded border border-border px-2 py-1 text-xs"
-                onclick={() => move(item, 'archived')}>Archive</button
+                class="btn btn-tertiary btn-sm"
+                onclick={() => move(item, 'archived')}
               >
+                Archive
+              </button>
             </div>
           </li>
         {/each}

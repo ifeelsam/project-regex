@@ -69,7 +69,7 @@
   });
 </script>
 
-<div class="mx-auto flex max-w-3xl flex-col gap-6">
+<div class="mx-auto flex max-w-4xl flex-col gap-6">
   <CaptureForm
     onsaved={(text) => {
       message = text;
@@ -78,37 +78,24 @@
   />
 
   {#if message}
-    <p
-      class="rounded-[var(--radius-control)] border border-border bg-bg-overlay px-4 py-3 text-sm text-text-muted"
-      role="status"
-    >
-      {message}
-    </p>
+    <p class="banner" role="status">{message}</p>
   {/if}
 
   <section class="space-y-4">
-    <div class="flex flex-col gap-3 sm:flex-row sm:items-center">
-      <label class="min-w-0 flex-1">
-        <span class="sr-only">Search inbox</span>
-        <input
-          class="w-full rounded-[var(--radius-control)] border border-border bg-bg-raised px-3 py-2.5 text-sm placeholder:text-text-faint"
-          placeholder="Search notes, titles, authors, transcripts…"
-          bind:value={query}
-          oninput={scheduleSearch}
-        />
-      </label>
-    </div>
+    <label class="search-field block">
+      <span class="font-mono text-[0.8125rem] text-text-faint">/</span>
+      <input
+        placeholder="Search notes, titles, authors, transcripts…"
+        bind:value={query}
+        oninput={scheduleSearch}
+      />
+    </label>
 
     {#if allTags.length}
       <div class="flex flex-wrap gap-2">
         <button
           type="button"
-          class={[
-            'rounded-full border px-3 py-1 text-xs transition-colors',
-            !activeTag
-              ? 'border-accent bg-accent-soft text-text'
-              : 'border-border text-text-muted hover:text-text'
-          ]}
+          class={['tag-filter', !activeTag && 'tag-filter-active']}
           onclick={() => (activeTag = '')}
         >
           All
@@ -116,15 +103,10 @@
         {#each allTags as tag (tag.id)}
           <button
             type="button"
-            class={[
-              'rounded-full border px-3 py-1 text-xs transition-colors',
-              activeTag === tag.name
-                ? 'border-accent bg-accent-soft text-text'
-                : 'border-border text-text-muted hover:text-text'
-            ]}
+            class={['tag-filter', activeTag === tag.name && 'tag-filter-active']}
             onclick={() => (activeTag = tag.name)}
           >
-            {tag.name}
+            #{tag.name}
           </button>
         {/each}
       </div>
@@ -140,7 +122,7 @@
           : 'Capture a link or a quick thought above. Your note is the gold.'}
       />
     {:else}
-      <ul class="space-y-3" role="list">
+      <ul class="grid gap-3 sm:grid-cols-2" role="list">
         {#each visibleRows as row (row.item.id)}
           <li>
             <InboxItemCard {row} onchange={refresh} />

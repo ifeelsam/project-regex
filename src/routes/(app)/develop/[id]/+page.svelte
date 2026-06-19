@@ -5,6 +5,7 @@
   import { page } from '$app/stores';
   import { api, type IdeaDetail, type ItemWithTags } from '$lib/api';
   import GraduateForm from '$lib/components/GraduateForm.svelte';
+  import { statusChipClass } from '$lib/status';
 
   let detail = $state<IdeaDetail | null>(null);
   let developNote = $state('');
@@ -153,44 +154,44 @@
 </script>
 
 <div class="mx-auto max-w-3xl space-y-6">
-  <a href="/develop/" class="text-sm text-text-muted hover:text-text">← Back to develop</a>
+  <a href="/develop/" class="btn btn-tertiary px-0 text-sm">← Back to develop</a>
 
   {#if message}
-    <p
-      class="rounded-[var(--radius-control)] border border-border bg-bg-overlay px-4 py-3 text-sm text-text-muted"
-      role="status"
-    >
-      {message}
-    </p>
+    <p class="banner" role="status">{message}</p>
   {/if}
 
   {#if loading}
     <p class="text-sm text-text-muted">Loading…</p>
   {:else if detail}
-    <header class="space-y-2">
-      <h2 class="text-xl font-semibold tracking-tight">
-        {detail.item.title || detail.item.note.slice(0, 80) || 'Untitled idea'}
-      </h2>
+    <header class="space-y-3">
+      <div class="flex flex-wrap items-start justify-between gap-3">
+        <h2 class="heading-display text-2xl">
+          {detail.item.title || detail.item.note.slice(0, 80) || 'Untitled idea'}
+        </h2>
+        <span class={['status-chip', statusChipClass(detail.item.status)]}>
+          {detail.item.status}
+        </span>
+      </div>
       {#if detail.item.author}
-        <p class="text-sm text-text-faint">{detail.item.author}</p>
+        <p class="font-mono text-sm text-text-faint">{detail.item.author}</p>
       {/if}
       <div class="flex flex-wrap gap-2 pt-1">
         {#if detail.item.status !== 'ready'}
           <button
             type="button"
-            class="rounded-[var(--radius-control)] bg-accent px-3 py-1.5 text-xs font-medium text-accent-contrast"
+            class="btn btn-primary btn-sm"
             onclick={() => setStatus('ready')}>Mark ready</button
           >
         {:else}
           <button
             type="button"
-            class="rounded-[var(--radius-control)] border border-border px-3 py-1.5 text-xs"
+            class="btn btn-secondary btn-sm"
             onclick={() => setStatus('brewing')}>Back to brewing</button
           >
         {/if}
         <button
           type="button"
-          class="rounded-[var(--radius-control)] border border-border px-3 py-1.5 text-xs text-text-muted"
+          class="btn btn-tertiary btn-sm"
           onclick={() => setStatus('archived')}>Archive</button
         >
       </div>
@@ -198,86 +199,84 @@
 
     {#if detail.item.status === 'ready' && ideaId}
       <GraduateForm
-        ideaId={ideaId}
+        {ideaId}
         defaultTitle={detail.item.title || detail.item.note.slice(0, 80)}
         defaultBrief={detail.item.develop_note}
         ondone={(text) => (message = text)}
       />
     {/if}
 
-    <section class="rounded-[var(--radius-card)] border border-border bg-bg-raised p-5">
-      <h3 class="text-sm font-medium">Original spark</h3>
-      <p class="mt-2 text-sm leading-relaxed text-text-muted">{detail.item.note}</p>
+    <section class="card-flat p-5">
+      <h3 class="text-sm font-semibold">Original spark</h3>
+      <p class="mt-2 text-sm leading-relaxed text-text-muted">
+        <span class="note-highlight">{detail.item.note}</span>
+      </p>
       {#if detail.item.url}
         <button
           type="button"
-          class="mt-3 text-xs text-accent hover:underline"
+          class="btn btn-tertiary btn-sm mt-3 px-0"
           onclick={() => openOriginal(detail?.item.url ?? null)}>Open original</button
         >
       {/if}
     </section>
 
-    <section class="rounded-[var(--radius-card)] border border-border bg-bg-raised p-5">
+    <section class="card-flat p-5">
       <div class="flex items-center justify-between gap-3">
-        <h3 class="text-sm font-medium">Thinking space</h3>
+        <h3 class="text-sm font-semibold">Thinking space</h3>
         {#if savingNote}
-          <span class="text-xs text-text-faint">Saving…</span>
+          <span class="font-mono text-xs text-text-faint">Saving…</span>
         {/if}
       </div>
       <textarea
-        class="mt-3 min-h-40 w-full rounded-[var(--radius-control)] border border-border bg-bg px-3 py-2.5 text-sm leading-relaxed"
+        class="field mt-3 min-h-40 leading-relaxed"
         placeholder="Work the idea out — angles, structure, what you would actually make…"
         bind:value={developNote}
         oninput={scheduleSaveNote}
       ></textarea>
     </section>
 
-    <section class="rounded-[var(--radius-card)] border border-border bg-bg-raised p-5">
-      <h3 class="text-sm font-medium">Tags</h3>
+    <section class="card-flat p-5">
+      <h3 class="text-sm font-semibold">Tags</h3>
       <div class="mt-3 flex gap-2">
         <input
-          class="min-w-0 flex-1 rounded-[var(--radius-control)] border border-border bg-bg px-3 py-2 text-sm"
+          class="field min-w-0 flex-1 font-mono text-sm"
           placeholder="Comma separated"
           bind:value={tagDraft}
         />
-        <button
-          type="button"
-          class="rounded-[var(--radius-control)] border border-border px-3 py-2 text-sm"
-          onclick={saveTags}>Save</button
-        >
+        <button type="button" class="btn btn-secondary" onclick={saveTags}>Save</button>
       </div>
     </section>
 
-    <section class="rounded-[var(--radius-card)] border border-border bg-bg-raised p-5">
-      <h3 class="text-sm font-medium">References</h3>
+    <section class="card-flat p-5">
+      <h3 class="text-sm font-semibold">References</h3>
       <p class="mt-1 text-sm text-text-muted">
         Attach other saved items that inform this idea.
       </p>
 
-      <div class="mt-4 flex gap-2">
+      <label class="search-field mt-4 block">
+        <span class="font-mono text-[0.8125rem] text-text-faint">/</span>
         <input
-          class="min-w-0 flex-1 rounded-[var(--radius-control)] border border-border bg-bg px-3 py-2 text-sm"
           placeholder="Search saved items to attach…"
           bind:value={referenceQuery}
           oninput={scheduleReferenceSearch}
         />
-      </div>
+      </label>
 
       {#if referenceHits.length}
         <ul class="mt-3 space-y-2" role="list">
           {#each referenceHits as row (row.item.id)}
             <li
-              class="flex items-center justify-between gap-3 rounded-[var(--radius-control)] border border-border bg-bg px-3 py-2"
+              class="flex items-center justify-between gap-3 rounded-[var(--radius-control)] border border-border bg-white px-3 py-2 dark:bg-bg-overlay"
             >
               <div class="min-w-0">
-                <p class="truncate text-sm">
+                <p class="truncate text-sm font-medium">
                   {row.item.title || row.item.note.slice(0, 60) || 'Untitled'}
                 </p>
                 <p class="truncate text-xs text-text-faint">{row.item.note}</p>
               </div>
               <button
                 type="button"
-                class="shrink-0 text-xs text-accent hover:underline"
+                class="btn btn-tertiary btn-sm shrink-0"
                 onclick={() => attachReference(row.item.id)}>Attach</button
               >
             </li>
@@ -289,17 +288,17 @@
         <ul class="mt-4 space-y-3" role="list">
           {#each detail.references as row (row.item.id)}
             <li
-              class="flex gap-3 rounded-[var(--radius-control)] border border-border bg-bg p-3"
+              class="flex gap-3 rounded-[var(--radius-control)] border border-border bg-white p-3 dark:bg-bg-overlay"
             >
               {#if thumbSrc(row.item.thumbnail_path)}
                 <img
                   src={thumbSrc(row.item.thumbnail_path)}
                   alt=""
-                  class="size-12 shrink-0 rounded object-cover"
+                  class="size-12 shrink-0 rounded-lg object-cover"
                 />
               {/if}
               <div class="min-w-0 flex-1">
-                <p class="text-sm font-medium">
+                <p class="text-sm font-semibold">
                   {row.item.title || row.item.note.slice(0, 60) || 'Untitled'}
                 </p>
                 <p class="mt-1 line-clamp-2 text-xs text-text-muted">{row.item.note}</p>
@@ -308,13 +307,13 @@
                 {#if row.item.url}
                   <button
                     type="button"
-                    class="text-xs text-text-muted hover:text-text"
+                    class="btn btn-tertiary btn-sm"
                     onclick={() => openOriginal(row.item.url)}>Open</button
                   >
                 {/if}
                 <button
                   type="button"
-                  class="text-xs text-text-muted hover:text-text"
+                  class="btn btn-tertiary btn-sm"
                   onclick={() => detachReference(row.item.id)}>Remove</button
                 >
               </div>

@@ -29,10 +29,7 @@
 
 <div class="mx-auto max-w-4xl space-y-8">
   {#if message}
-    <p
-      class="rounded-[var(--radius-control)] border border-border bg-bg-overlay px-4 py-3 text-sm text-text-muted"
-      role="status"
-    >
+    <p class="banner" role="status">
       {message}
     </p>
   {/if}

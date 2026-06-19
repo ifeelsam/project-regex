@@ -7,25 +7,24 @@
   }
 </script>
 
-<nav class="flex h-full w-56 shrink-0 flex-col border-r border-border bg-bg-raised px-3 pb-5">
+<nav
+  class="flex h-full w-[11.5rem] shrink-0 flex-col border-r border-border bg-bg-raised px-3.5 pb-5"
+>
   <div class="titlebar-inset" data-tauri-drag-region aria-hidden="true"></div>
 
-  <div class="mb-8 px-3">
-    <p class="text-xs font-medium uppercase tracking-[0.14em] text-text-faint">Regex</p>
-    <p class="mt-1 text-sm text-text-muted">Inspiration to output</p>
+  <div class="mb-6 flex items-center gap-2.5 px-2 pb-4">
+    <div class="brand-mark size-6 text-[0.7rem]">.*</div>
+    <span class="brand-wordmark text-sm">
+      <span class="brand-slash">/</span>regex<span class="brand-slash">/</span>
+    </span>
   </div>
 
-  <ul class="flex flex-1 flex-col gap-0.5" role="list">
+  <ul class="flex flex-1 flex-col gap-1" role="list">
     {#each navItems as item (item.href)}
       <li>
         <a
           href={item.href}
-          class={[
-            'block rounded-[var(--radius-control)] px-3 py-2 text-sm transition-colors',
-            isActive(item.href, $page.url.pathname)
-              ? 'bg-accent-soft font-medium text-text'
-              : 'text-text-muted hover:bg-bg-overlay hover:text-text'
-          ]}
+          class={['nav-item', isActive(item.href, $page.url.pathname) && 'nav-item-active']}
           aria-current={isActive(item.href, $page.url.pathname) ? 'page' : undefined}
         >
           {item.label}
@@ -33,4 +32,8 @@
       </li>
     {/each}
   </ul>
+
+  <p class="px-2 pt-4 font-mono text-[0.6875rem] leading-relaxed text-text-faint">
+    capture light · break down heavy
+  </p>
 </nav>

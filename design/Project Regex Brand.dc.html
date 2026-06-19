@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&family=Hanken+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box}
+  html,body{margin:0}
+  body{background:#F1ECDF;font-family:'Hanken Grotesk',system-ui,sans-serif;color:#1A1813;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+  ::selection{background:rgba(230,74,46,.22)}
+  @keyframes rxUp{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+  @keyframes rxCaret{0%,49%{opacity:1}50%,100%{opacity:0}}
+</style>
+</helmet>
+
+<div style="min-height:100vh;background:#F1ECDF;background-image:radial-gradient(circle at 1px 1px, rgba(26,24,19,.05) 1px, transparent 0);background-size:24px 24px;padding:0 0 0 0;">
+<div style="max-width:1160px;margin:0 auto;padding:36px 56px 120px;">
+
+  <!-- ===== TOP BAR ===== -->
+  <div style="display:flex;align-items:center;justify-content:space-between;padding-bottom:20px;border-bottom:1px solid #DED7C6;animation:rxUp .5s both;">
+    <div style="display:flex;align-items:center;gap:12px;">
+      <div style="width:30px;height:30px;border-radius:8px;background:#1A1813;display:flex;align-items:center;justify-content:center;font-family:'JetBrains Mono',monospace;font-weight:600;font-size:15px;color:#E64A2E;">.*</div>
+      <span style="font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:17px;letter-spacing:-.01em;">project <span style="color:#E64A2E;">/</span>regex<span style="color:#E64A2E;">/</span></span>
+    </div>
+    <span style="font-family:'JetBrains Mono',monospace;font-size:12px;color:#8A8475;letter-spacing:.04em;">brand system · v1.0</span>
+  </div>
+
+  <!-- ===== HERO ===== -->
+  <div style="padding:88px 0 96px;animation:rxUp .6s .05s both;">
+    <div style="font-family:'JetBrains Mono',monospace;font-size:13px;color:#E64A2E;letter-spacing:.05em;margin-bottom:28px;">/ find the signal in the noise /</div>
+    <h1 style="font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:74px;line-height:.98;letter-spacing:-.03em;margin:0 0 28px;max-width:14ch;text-wrap:balance;">Patterns out of chaos.</h1>
+    <p style="font-size:21px;line-height:1.5;color:#56503F;max-width:50ch;margin:0;text-wrap:pretty;">A capture-to-creation tool for people who collect inspiration faster than they can use it. Save the spark, keep the <span style="background:linear-gradient(180deg,transparent 58%,rgba(245,197,24,.6) 58%);padding:0 1px;">reason it grabbed you</span>, and turn it into finished work.</p>
+  </div>
+
+  <!-- ===== 01 IDENTITY ===== -->
+  <div style="animation:rxUp .6s .1s both;">
+    <div style="display:flex;align-items:baseline;gap:14px;margin-bottom:32px;">
+      <span style="font-family:'JetBrains Mono',monospace;font-size:12px;color:#E64A2E;">/ 01</span>
+      <span style="font-family:'JetBrains Mono',monospace;font-size:12px;color:#8A8475;letter-spacing:.06em;">identity</span>
+      <div style="flex:1;height:1px;background:#DED7C6;"></div>
+    </div>
+
+    <!-- primary wordmark card -->
+    <div style="background:#FCFAF3;border:1px solid #E7E0D0;border-radius:18px;padding:64px 56px;box-shadow:0 1px 2px rgba(26,24,19,.04),0 18px 40px -28px rgba(26,24,19,.22);margin-bottom:20px;">
+      <div style="font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:60px;letter-spacing:-.025em;color:#1A1813;">project <span style="color:#E64A2E;">/</span>regex<span style="color:#E64A2E;">/</span></div>
+      <div style="margin-top:24px;font-size:15px;color:#6E6A5C;max-width:62ch;line-height:1.5;">A regular expression finds the meaningful pattern hidden in a wall of text. The name is the promise: your saved reels, posts and half-thoughts aren't noise — they're a pattern waiting to be matched into something you'll make.</div>
+    </div>
+
+    <!-- logo variations row -->
+    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:20px;">
+      <!-- app icon -->
+      <div style="background:#FCFAF3;border:1px solid #E7E0D0;border-radius:18px;padding:40px;display:flex;flex-direction:column;align-items:center;gap:24px;text-align:center;">
+        <div style="width:108px;height:108px;border-radius:26px;background:#1A1813;display:flex;align-items:center;justify-content:center;font-family:'JetBrains Mono',monospace;font-weight:600;font-size:48px;color:#E64A2E;box-shadow:0 14px 30px -14px rgba(26,24,19,.5);">.*</div>
+        <div><div style="font-family:'JetBrains Mono',monospace;font-size:12px;color:#1A1813;">.*</div><div style="font-size:12.5px;color:#8A8475;margin-top:4px;">app mark — <i>“match anything”</i></div></div>
+      </div>
+      <!-- reversed -->
+      <div style="background:#1A1813;border:1px solid #1A1813;border-radius:18px;padding:40px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:24px;text-align:center;">
+        <div style="font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:30px;letter-spacing:-.02em;color:#F1ECDF;">project <span style="color:#E64A2E;">/</span>regex<span style="color:#E64A2E;">/</span></div>
+        <div style="font-size:12.5px;color:#9A9486;">reversed — on ink</div>
+      </div>
+      <!-- mono / compact -->
+      <div style="background:#FCFAF3;border:1px solid #E7E0D0;border-radius:18px;padding:40px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:24px;text-align:center;">
+        <div style="font-family:'JetBrains Mono',monospace;font-weight:500;font-size:30px;color:#1A1813;"><span style="color:#E64A2E;">/</span>regex<span style="color:#E64A2E;">/</span><span style="color:#C7BFAC;">g</span></div>
+        <div style="font-size:12.5px;color:#8A8475;">compact mark — <i>the global flag</i></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== 02 COLOR ===== -->
+  <div style="margin-top:96px;animation:rxUp .6s both;">
+    <div style="display:flex;align-items:baseline;gap:14px;margin-bottom:32px;">
+      <span style="font-family:'JetBrains Mono',monospace;font-size:12px;color:#E64A2E;">/ 02</span>
+      <span style="font-family:'JetBrains Mono',monospace;font-size:12px;color:#8A8475;letter-spacing:.06em;">color</span>
+      <div style="flex:1;height:1px;background:#DED7C6;"></div>
+    </div>
+
+    <!-- hero accent + ink -->
+    <div style="display:grid;grid-template-columns:1.4fr 1fr;gap:20px;margin-bottom:20px;">
+      <div style="background:#E64A2E;border-radius:18px;padding:32px;height:200px;display:flex;flex-direction:column;justify-content:flex-end;color:#fff;">
+        <div style="font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:22px;">Vermilion</div>
+        <div style="display:flex;justify-content:space-between;margin-top:6px;font-family:'JetBrains Mono',monospace;font-size:13px;opacity:.9;"><span>#E64A2E</span><span>primary action · the spark</span></div>
+      </div>
+      <div style="background:#1A1813;border-radius:18px;padding:32px;height:200px;display:flex;flex-direction:column;justify-content:flex-end;color:#F1ECDF;">
+        <div style="font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:22px;">Ink</div>
+        <div style="display:flex;justify-content:space-between;margin-top:6px;font-family:'JetBrains Mono',monospace;font-size:13px;opacity:.7;"><span>#1A1813</span><span>text · headlines</span></div>
+      </div>
+    </div>
+
+    <!-- swatch grid -->
+    <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:14px;">
+      <div style="border-radius:14px;overflow:hidden;border:1px solid #E7E0D0;background:#FCFAF3;"><div style="height:78px;background:#F1ECDF;border-bottom:1px solid #E7E0D0;"></div><div style="padding:12px;"><div style="font-weight:600;font-size:13.5px;">Paper</div><div style="font-family:'JetBrains Mono',monospace;font-size:11.5px;color:#8A8475;">#F1ECDF</div></div></div>
+      <div style="border-radius:14px;overflow:hidden;border:1px solid #E7E0D0;background:#FCFAF3;"><div style="height:78px;background:#FCFAF3;border-bottom:1px solid #E7E0D0;"></div><div style="padding:12px;"><div style="font-weight:600;font-size:13.5px;">Surface</div><div style="font-family:'JetBrains Mono',monospace;font-size:11.5px;color:#8A8475;">#FCFAF3</div></div></div>
+      <div style="border-radius:14px;overflow:hidden;border:1px solid #E7E0D0;background:#FCFAF3;"><div style="height:78px;background:#F5C518;border-bottom:1px solid #E7E0D0;"></div><div style="padding:12px;"><div style="font-weight:600;font-size:13.5px;">Highlight</div><div style="font-family:'JetBrains Mono',monospace;font-size:11.5px;color:#8A8475;">#F5C518</div></div></div>
+      <div style="border-radius:14px;overflow:hidden;border:1px solid #E7E0D0;background:#FCFAF3;"><div style="height:78px;background:#3E6B3A;border-bottom:1px solid #E7E0D0;"></div><div style="padding:12px;"><div style="font-weight:600;font-size:13.5px;">Sage</div><div style="font-family:'JetBrains Mono',monospace;font-size:11.5px;color:#8A8475;">#3E6B3A</div></div></div>
+      <div style="border-radius:14px;overflow:hidden;border:1px solid #E7E0D0;background:#FCFAF3;"><div style="height:78px;background:#6E6A5C;border-bottom:1px solid #E7E0D0;"></div><div style="padding:12px;"><div style="font-weight:600;font-size:13.5px;">Muted</div><div style="font-family:'JetBrains Mono',monospace;font-size:11.5px;color:#8A8475;">#6E6A5C</div></div></div>
+    </div>
+    <div style="margin-top:14px;font-size:13.5px;color:#6E6A5C;line-height:1.5;max-width:70ch;">Highlight yellow is reserved — it only ever marks <span style="background:linear-gradient(180deg,transparent 58%,rgba(245,197,24,.6) 58%);">the note</span>, the reason something grabbed you. That restraint keeps the gold feeling like gold.</div>
+  </div>
+
+  <!-- ===== 03 TYPE ===== -->
+  <div style="margin-top:96px;animation:rxUp .6s both;">
+    <div style="display:flex;align-items:baseline;gap:14px;margin-bottom:32px;">
+      <span style="font-family:'JetBrains Mono',monospace;font-size:12px;color:#E64A2E;">/ 03</span>
+      <span style="font-family:'JetBrains Mono',monospace;font-size:12px;color:#8A8475;letter-spacing:.06em;">type</span>
+      <div style="flex:1;height:1px;background:#DED7C6;"></div>
+    </div>
+
+    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:20px;">
+      <div style="background:#FCFAF3;border:1px solid #E7E0D0;border-radius:18px;padding:32px;">
+        <div style="font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:62px;line-height:1;letter-spacing:-.02em;">Aa</div>
+        <div style="margin-top:24px;font-family:'JetBrains Mono',monospace;font-size:11.5px;color:#E64A2E;letter-spacing:.04em;">DISPLAY</div>
+        <div style="font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:18px;margin-top:4px;">Bricolage Grotesque</div>
+        <div style="font-size:13px;color:#6E6A5C;margin-top:8px;line-height:1.5;">Warm, slightly quirky grotesque. Headlines and the wordmark.</div>
+      </div>
+      <div style="background:#FCFAF3;border:1px solid #E7E0D0;border-radius:18px;padding:32px;">
+        <div style="font-family:'Hanken Grotesk',sans-serif;font-weight:500;font-size:62px;line-height:1;letter-spacing:-.01em;">Aa</div>
+        <div style="margin-top:24px;font-family:'JetBrains Mono',monospace;font-size:11.5px;color:#E64A2E;letter-spacing:.04em;">TEXT</div>
+        <div style="font-family:'Hanken Grotesk',sans-serif;font-weight:600;font-size:18px;margin-top:4px;">Hanken Grotesk</div>
+        <div style="font-size:13px;color:#6E6A5C;margin-top:8px;line-height:1.5;">Clean and humanist. Body copy, UI, and notes.</div>
+      </div>
+      <div style="background:#FCFAF3;border:1px solid #E7E0D0;border-radius:18px;padding:32px;">
+        <div style="font-family:'JetBrains Mono',monospace;font-weight:500;font-size:58px;line-height:1.08;">Aa</div>
+        <div style="margin-top:24px;font-family:'JetBrains Mono',monospace;font-size:11.5px;color:#E64A2E;letter-spacing:.04em;">MONO</div>
+        <div style="font-family:'JetBrains Mono',monospace;font-weight:500;font-size:17px;margin-top:4px;">JetBrains Mono</div>
+        <div style="font-size:13px;color:#6E6A5C;margin-top:8px;line-height:1.5;">The regex wink. Labels, metadata, tags, timestamps.</div>
+      </div>
+    </div>
+
+    <!-- scale -->
+    <div style="background:#FCFAF3;border:1px solid #E7E0D0;border-radius:18px;padding:36px 40px;margin-top:20px;display:flex;flex-direction:column;gap:18px;">
+      <div style="display:flex;align-items:baseline;gap:20px;"><span style="font-family:'JetBrains Mono',monospace;font-size:11px;color:#B7AF9C;width:64px;flex:none;">48 / 700</span><span style="font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:38px;letter-spacing:-.02em;">The note is the gold.</span></div>
+      <div style="display:flex;align-items:baseline;gap:20px;"><span style="font-family:'JetBrains Mono',monospace;font-size:11px;color:#B7AF9C;width:64px;flex:none;">24 / 600</span><span style="font-family:'Hanken Grotesk';font-weight:600;font-size:22px;">Capture light, break down heavy.</span></div>
+      <div style="display:flex;align-items:baseline;gap:20px;"><span style="font-family:'JetBrains Mono',monospace;font-size:11px;color:#B7AF9C;width:64px;flex:none;">16 / 400</span><span style="font-size:16px;color:#3a352a;">Everything saved is instantly searchable — notes, titles, authors, transcripts.</span></div>
+      <div style="display:flex;align-items:baseline;gap:20px;"><span style="font-family:'JetBrains Mono',monospace;font-size:11px;color:#B7AF9C;width:64px;flex:none;">13 / mono</span><span style="font-family:'JetBrains Mono',monospace;font-size:13px;color:#6E6A5C;">captured_at · 2 min ago · instagram</span></div>
+    </div>
+  </div>
+
+  <!-- ===== 04 ELEMENTS ===== -->
+  <div style="margin-top:96px;animation:rxUp .6s both;">
+    <div style="display:flex;align-items:baseline;gap:14px;margin-bottom:32px;">
+      <span style="font-family:'JetBrains Mono',monospace;font-size:12px;color:#E64A2E;">/ 04</span>
+      <span style="font-family:'JetBrains Mono',monospace;font-size:12px;color:#8A8475;letter-spacing:.06em;">elements</span>
+      <div style="flex:1;height:1px;background:#DED7C6;"></div>
+    </div>
+
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;">
+      <!-- buttons + tags -->
+      <div style="background:#FCFAF3;border:1px solid #E7E0D0;border-radius:18px;padding:32px;display:flex;flex-direction:column;gap:24px;">
+        <div style="font-family:'JetBrains Mono',monospace;font-size:11.5px;color:#8A8475;letter-spacing:.04em;">BUTTONS</div>
+        <div style="display:flex;gap:12px;flex-wrap:wrap;align-items:center;">
+          <button style="border:none;background:#E64A2E;color:#fff;font-family:'Hanken Grotesk';font-weight:600;font-size:14.5px;padding:11px 20px;border-radius:10px;cursor:pointer;box-shadow:0 6px 16px -8px rgba(230,74,46,.7);">Produce this</button>
+          <button style="border:1px solid #D8D0BE;background:transparent;color:#1A1813;font-family:'Hanken Grotesk';font-weight:600;font-size:14.5px;padding:11px 20px;border-radius:10px;cursor:pointer;">Develop</button>
+          <button style="border:none;background:transparent;color:#6E6A5C;font-family:'Hanken Grotesk';font-weight:600;font-size:14.5px;padding:11px 12px;border-radius:10px;cursor:pointer;">Archive</button>
+        </div>
+        <div style="font-family:'JetBrains Mono',monospace;font-size:11.5px;color:#8A8475;letter-spacing:.04em;margin-top:4px;">TAGS</div>
+        <div style="display:flex;gap:8px;flex-wrap:wrap;">
+          <span style="font-family:'JetBrains Mono',monospace;font-size:12.5px;background:#EDE8DB;color:#56503F;padding:5px 11px;border-radius:7px;">#hook</span>
+          <span style="font-family:'JetBrains Mono',monospace;font-size:12.5px;background:#EDE8DB;color:#56503F;padding:5px 11px;border-radius:7px;">#editing</span>
+          <span style="font-family:'JetBrains Mono',monospace;font-size:12.5px;background:#EDE8DB;color:#56503F;padding:5px 11px;border-radius:7px;">#story-structure</span>
+          <span style="font-family:'JetBrains Mono',monospace;font-size:12.5px;background:#EDE8DB;color:#56503F;padding:5px 11px;border-radius:7px;">+ add</span>
+        </div>
+        <div style="font-family:'JetBrains Mono',monospace;font-size:11.5px;color:#8A8475;letter-spacing:.04em;margin-top:4px;">STATUS</div>
+        <div style="display:flex;gap:8px;flex-wrap:wrap;">
+          <span style="font-size:12.5px;font-weight:600;background:#ECE8DC;color:#6E6A5C;padding:5px 12px;border-radius:999px;">inbox</span>
+          <span style="font-size:12.5px;font-weight:600;background:#F6E6C5;color:#9A6B16;padding:5px 12px;border-radius:999px;">brewing</span>
+          <span style="font-size:12.5px;font-weight:600;background:#DCEBD6;color:#3E6B3A;padding:5px 12px;border-radius:999px;">ready</span>
+          <span style="font-size:12.5px;font-weight:600;background:#F8DBD2;color:#B23A1E;padding:5px 12px;border-radius:999px;">producing</span>
+          <span style="font-size:12.5px;font-weight:600;background:#D7E3E8;color:#34606F;padding:5px 12px;border-radius:999px;">shipped</span>
+        </div>
+      </div>
+
+      <!-- the note field -->
+      <div style="background:#FCFAF3;border:1px solid #E7E0D0;border-radius:18px;padding:32px;display:flex;flex-direction:column;gap:16px;">
+        <div style="font-family:'JetBrains Mono',monospace;font-size:11.5px;color:#8A8475;letter-spacing:.04em;">THE NOTE — the first thing we ask for</div>
+        <div style="background:#fff;border:1.5px solid #E64A2E;border-radius:12px;padding:18px;box-shadow:0 0 0 4px rgba(230,74,46,.1);">
+          <div style="font-size:14px;font-weight:600;color:#1A1813;margin-bottom:8px;">Why did this grab you?</div>
+          <div style="font-size:15px;color:#3a352a;line-height:1.55;">The way they cut on the <span style="background:linear-gradient(180deg,transparent 58%,rgba(245,197,24,.6) 58%);">beat drop</span> instead of the visual — audio-led editing. Try this for the launch teaser.<span style="display:inline-block;width:2px;height:18px;background:#E64A2E;margin-left:2px;vertical-align:-3px;animation:rxCaret 1.1s steps(1) infinite;"></span></div>
+        </div>
+        <div style="display:flex;align-items:center;gap:10px;background:#fff;border:1px solid #E2DACA;border-radius:10px;padding:11px 14px;">
+          <span style="font-family:'JetBrains Mono',monospace;font-size:13px;color:#B7AF9C;">link</span>
+          <span style="font-size:14px;color:#56503F;">instagram.com/reel/Cx…</span>
+          <span style="margin-left:auto;font-family:'JetBrains Mono',monospace;font-size:11.5px;color:#3E6B3A;">✓ fetched</span>
+        </div>
+        <div style="font-size:12.5px;color:#8A8475;line-height:1.5;">Link &amp; metadata are secondary — they fill in on their own. Saving never waits on a fetch.</div>
+      </div>
+    </div>
+
+    <!-- idea card -->
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:20px;">
+      <!-- card 1 -->
+      <div style="background:#fff;border:1px solid #ECE5D6;border-radius:16px;overflow:hidden;box-shadow:0 1px 2px rgba(26,24,19,.04),0 14px 30px -22px rgba(26,24,19,.3);">
+        <div style="height:118px;background:linear-gradient(135deg,#E64A2E,#C13A1F);position:relative;display:flex;align-items:flex-end;padding:12px;">
+          <span style="font-family:'JetBrains Mono',monospace;font-size:11px;color:#fff;background:rgba(0,0,0,.28);padding:3px 8px;border-radius:6px;">reel · 0:18</span>
+        </div>
+        <div style="padding:16px;">
+          <div style="display:flex;justify-content:space-between;align-items:center;"><span style="font-family:'JetBrains Mono',monospace;font-size:11.5px;color:#8A8475;">@kewuna · ig</span><span style="font-size:11.5px;font-weight:600;background:#F6E6C5;color:#9A6B16;padding:3px 9px;border-radius:999px;">brewing</span></div>
+          <div style="font-weight:600;font-size:15px;margin-top:8px;line-height:1.3;">Audio-led cut on the beat drop</div>
+          <div style="font-size:13px;color:#3a352a;line-height:1.5;margin-top:8px;"><span style="background:linear-gradient(180deg,transparent 60%,rgba(245,197,24,.55) 60%);">Cut on sound, not picture</span> — steal for the teaser.</div>
+        </div>
+      </div>
+      <!-- card 2 -->
+      <div style="background:#fff;border:1px solid #ECE5D6;border-radius:16px;overflow:hidden;box-shadow:0 1px 2px rgba(26,24,19,.04),0 14px 30px -22px rgba(26,24,19,.3);">
+        <div style="height:118px;background:linear-gradient(135deg,#3E6B3A,#2c5128);display:flex;align-items:flex-end;padding:12px;">
+          <span style="font-family:'JetBrains Mono',monospace;font-size:11px;color:#fff;background:rgba(0,0,0,.28);padding:3px 8px;border-radius:6px;">thread · x</span>
+        </div>
+        <div style="padding:16px;">
+          <div style="display:flex;justify-content:space-between;align-items:center;"><span style="font-family:'JetBrains Mono',monospace;font-size:11.5px;color:#8A8475;">@dvassallo</span><span style="font-size:11.5px;font-weight:600;background:#DCEBD6;color:#3E6B3A;padding:3px 9px;border-radius:999px;">ready</span></div>
+          <div style="font-weight:600;font-size:15px;margin-top:8px;line-height:1.3;">Open loops in the first line</div>
+          <div style="font-size:13px;color:#3a352a;line-height:1.5;margin-top:8px;"><span style="background:linear-gradient(180deg,transparent 60%,rgba(245,197,24,.55) 60%);">Promise, then withhold.</span> Outline structure.</div>
+        </div>
+      </div>
+      <!-- card 3 (thought) -->
+      <div style="background:#fff;border:1px solid #ECE5D6;border-radius:16px;overflow:hidden;box-shadow:0 1px 2px rgba(26,24,19,.04),0 14px 30px -22px rgba(26,24,19,.3);display:flex;flex-direction:column;">
+        <div style="height:118px;background:#F3EEE1;display:flex;align-items:center;justify-content:center;">
+          <span style="font-family:'JetBrains Mono',monospace;font-size:30px;color:#CFC7B4;">.*</span>
+        </div>
+        <div style="padding:16px;">
+          <div style="display:flex;justify-content:space-between;align-items:center;"><span style="font-family:'JetBrains Mono',monospace;font-size:11.5px;color:#8A8475;">pure thought</span><span style="font-size:11.5px;font-weight:600;background:#ECE8DC;color:#6E6A5C;padding:3px 9px;border-radius:999px;">inbox</span></div>
+          <div style="font-weight:600;font-size:15px;margin-top:8px;line-height:1.3;">A series on “tools that disappear”</div>
+          <div style="font-size:13px;color:#3a352a;line-height:1.5;margin-top:8px;">No link. Just the idea, captured before it left.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== 05 SCREENS ===== -->
+  <div style="margin-top:96px;animation:rxUp .6s both;">
+    <div style="display:flex;align-items:baseline;gap:14px;margin-bottom:32px;">
+      <span style="font-family:'JetBrains Mono',monospace;font-size:12px;color:#E64A2E;">/ 05</span>
+      <span style="font-family:'JetBrains Mono',monospace;font-size:12px;color:#8A8475;letter-spacing:.06em;">screens — where the system lives</span>
+      <div style="flex:1;height:1px;background:#DED7C6;"></div>
+    </div>
+
+    <!-- SCREEN 1: Inbox / capture (light) -->
+    <div style="margin-bottom:20px;">
+      <div style="font-family:'JetBrains Mono',monospace;font-size:12px;color:#8A8475;margin-bottom:10px;">inbox + capture · light</div>
+      <div style="border:1px solid #DED7C6;border-radius:16px;overflow:hidden;box-shadow:0 1px 2px rgba(26,24,19,.04),0 30px 60px -40px rgba(26,24,19,.5);">
+        <div style="background:#E9E3D4;padding:11px 16px;display:flex;align-items:center;gap:8px;border-bottom:1px solid #DED7C6;">
+          <span style="width:11px;height:11px;border-radius:999px;background:#E0584C;"></span>
+          <span style="width:11px;height:11px;border-radius:999px;background:#E6B94C;"></span>
+          <span style="width:11px;height:11px;border-radius:999px;background:#5CA85C;"></span>
+        </div>
+        <div style="display:flex;background:#F4EFE2;min-height:420px;">
+          <!-- nav rail -->
+          <div style="width:184px;flex:none;background:#EDE7D8;border-right:1px solid #DED7C6;padding:18px 14px;display:flex;flex-direction:column;gap:4px;">
+            <div style="display:flex;align-items:center;gap:9px;padding:6px 8px 16px;"><div style="width:24px;height:24px;border-radius:7px;background:#1A1813;display:flex;align-items:center;justify-content:center;font-family:'JetBrains Mono',monospace;font-size:12px;color:#E64A2E;font-weight:600;">.*</div><span style="font-family:'Bricolage Grotesque';font-weight:700;font-size:14px;">/regex/</span></div>
+            <div style="display:flex;align-items:center;gap:10px;padding:9px 12px;border-radius:9px;background:#1A1813;color:#F1ECDF;font-size:13.5px;font-weight:600;">Inbox <span style="margin-left:auto;font-family:'JetBrains Mono',monospace;font-size:11px;background:#E64A2E;color:#fff;padding:1px 7px;border-radius:999px;">12</span></div>
+            <div style="display:flex;align-items:center;gap:10px;padding:9px 12px;border-radius:9px;color:#56503F;font-size:13.5px;">Develop</div>
+            <div style="display:flex;align-items:center;gap:10px;padding:9px 12px;border-radius:9px;color:#56503F;font-size:13.5px;">Projects</div>
+            <div style="display:flex;align-items:center;gap:10px;padding:9px 12px;border-radius:9px;color:#56503F;font-size:13.5px;">Library</div>
+            <div style="margin-top:auto;display:flex;align-items:center;gap:10px;padding:9px 12px;border-radius:9px;color:#8A8475;font-size:13.5px;">Settings</div>
+          </div>
+          <!-- main -->
+          <div style="flex:1;padding:22px 24px;min-width:0;">
+            <div style="display:flex;align-items:center;gap:12px;background:#fff;border:1px solid #E2DACA;border-radius:11px;padding:11px 15px;margin-bottom:18px;">
+              <span style="font-family:'JetBrains Mono',monospace;font-size:13px;color:#B7AF9C;">/</span>
+              <span style="font-size:14px;color:#8A8475;">search notes, transcripts, authors…</span>
+            </div>
+            <!-- composer -->
+            <div style="background:#fff;border:1px solid #ECE5D6;border-radius:13px;padding:16px;margin-bottom:18px;box-shadow:0 10px 24px -20px rgba(26,24,19,.4);">
+              <div style="display:flex;align-items:center;gap:8px;background:#F7F3E9;border-radius:9px;padding:9px 12px;margin-bottom:12px;">
+                <span style="font-family:'JetBrains Mono',monospace;font-size:12px;color:#B7AF9C;">paste link</span>
+                <span style="font-size:13.5px;color:#56503F;">tiktok.com/@mads/video/73…</span>
+                <span style="margin-left:auto;font-family:'JetBrains Mono',monospace;font-size:11px;color:#3E6B3A;">✓ title · author · transcript</span>
+              </div>
+              <div style="font-size:14.5px;font-weight:600;color:#1A1813;margin-bottom:6px;">Why did this grab you?</div>
+              <div style="font-size:14.5px;color:#3a352a;line-height:1.5;">The pacing — three ideas in nine seconds, no filler.<span style="display:inline-block;width:2px;height:16px;background:#E64A2E;margin-left:2px;vertical-align:-2px;animation:rxCaret 1.1s steps(1) infinite;"></span></div>
+              <div style="display:flex;align-items:center;gap:8px;margin-top:14px;">
+                <span style="font-family:'JetBrains Mono',monospace;font-size:12px;background:#EDE8DB;color:#56503F;padding:4px 10px;border-radius:7px;">#pacing</span>
+                <span style="font-family:'JetBrains Mono',monospace;font-size:12px;background:#EDE8DB;color:#56503F;padding:4px 10px;border-radius:7px;">+ tag</span>
+                <button style="margin-left:auto;border:none;background:#E64A2E;color:#fff;font-weight:600;font-size:13.5px;padding:9px 18px;border-radius:9px;cursor:pointer;">Save to inbox</button>
+              </div>
+            </div>
+            <!-- inbox list -->
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
+              <div style="background:#fff;border:1px solid #ECE5D6;border-radius:12px;padding:13px;display:flex;gap:12px;">
+                <div style="width:54px;height:54px;flex:none;border-radius:8px;background:linear-gradient(135deg,#E64A2E,#C13A1F);"></div>
+                <div style="min-width:0;"><div style="font-weight:600;font-size:13.5px;">Beat-drop cut</div><div style="font-size:12px;color:#3a352a;margin-top:3px;line-height:1.4;"><span style="background:linear-gradient(180deg,transparent 62%,rgba(245,197,24,.55) 62%);">audio-led editing</span></div><div style="font-family:'JetBrains Mono',monospace;font-size:10.5px;color:#B7AF9C;margin-top:5px;">2m · ig</div></div>
+              </div>
+              <div style="background:#fff;border:1px solid #ECE5D6;border-radius:12px;padding:13px;display:flex;gap:12px;">
+                <div style="width:54px;height:54px;flex:none;border-radius:8px;background:linear-gradient(135deg,#3E6B3A,#2c5128);"></div>
+                <div style="min-width:0;"><div style="font-weight:600;font-size:13.5px;">Open-loop hooks</div><div style="font-size:12px;color:#3a352a;margin-top:3px;line-height:1.4;">promise then withhold</div><div style="font-family:'JetBrains Mono',monospace;font-size:10.5px;color:#B7AF9C;margin-top:5px;">1h · x</div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SCREEN 2 + 3 row -->
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;">
+      <!-- Develop board (light) -->
+      <div>
+        <div style="font-family:'JetBrains Mono',monospace;font-size:12px;color:#8A8475;margin-bottom:10px;">develop board · light</div>
+        <div style="border:1px solid #DED7C6;border-radius:16px;overflow:hidden;box-shadow:0 1px 2px rgba(26,24,19,.04),0 30px 60px -40px rgba(26,24,19,.5);height:100%;">
+          <div style="background:#E9E3D4;padding:10px 14px;display:flex;gap:7px;border-bottom:1px solid #DED7C6;"><span style="width:10px;height:10px;border-radius:999px;background:#E0584C;"></span><span style="width:10px;height:10px;border-radius:999px;background:#E6B94C;"></span><span style="width:10px;height:10px;border-radius:999px;background:#5CA85C;"></span></div>
+          <div style="background:#F4EFE2;padding:20px;min-height:360px;">
+            <div style="font-family:'Bricolage Grotesque';font-weight:700;font-size:20px;letter-spacing:-.02em;margin-bottom:16px;">Develop</div>
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;">
+              <div>
+                <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px;"><span style="font-size:12px;font-weight:600;background:#F6E6C5;color:#9A6B16;padding:3px 10px;border-radius:999px;">brewing</span><span style="font-family:'JetBrains Mono',monospace;font-size:11px;color:#B7AF9C;">3</span></div>
+                <div style="display:flex;flex-direction:column;gap:10px;">
+                  <div style="background:#fff;border:1px solid #ECE5D6;border-radius:11px;padding:12px;"><div style="font-weight:600;font-size:13px;">Audio-led editing</div><div style="font-size:11.5px;color:#6E6A5C;margin-top:5px;line-height:1.4;">2 refs attached</div></div>
+                  <div style="background:#fff;border:1px solid #ECE5D6;border-radius:11px;padding:12px;"><div style="font-weight:600;font-size:13px;">Tools that disappear</div><div style="font-size:11.5px;color:#6E6A5C;margin-top:5px;line-height:1.4;">essay seed</div></div>
+                </div>
+              </div>
+              <div>
+                <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px;"><span style="font-size:12px;font-weight:600;background:#DCEBD6;color:#3E6B3A;padding:3px 10px;border-radius:999px;">ready</span><span style="font-family:'JetBrains Mono',monospace;font-size:11px;color:#B7AF9C;">1</span></div>
+                <div style="background:#fff;border:1.5px solid #E64A2E;border-radius:11px;padding:12px;box-shadow:0 0 0 4px rgba(230,74,46,.08);"><div style="font-weight:600;font-size:13px;">Launch teaser</div><div style="font-size:11.5px;color:#6E6A5C;margin-top:5px;line-height:1.4;">4 refs · brief written</div><button style="margin-top:11px;width:100%;border:none;background:#E64A2E;color:#fff;font-weight:600;font-size:12.5px;padding:8px;border-radius:8px;cursor:pointer;">Produce this →</button></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Library (dark) -->
+      <div>
+        <div style="font-family:'JetBrains Mono',monospace;font-size:12px;color:#8A8475;margin-bottom:10px;">asset library · dark</div>
+        <div style="border:1px solid #2a2820;border-radius:16px;overflow:hidden;box-shadow:0 1px 2px rgba(26,24,19,.04),0 30px 60px -40px rgba(26,24,19,.6);height:100%;">
+          <div style="background:#211F18;padding:10px 14px;display:flex;gap:7px;border-bottom:1px solid #2a2820;"><span style="width:10px;height:10px;border-radius:999px;background:#E0584C;"></span><span style="width:10px;height:10px;border-radius:999px;background:#E6B94C;"></span><span style="width:10px;height:10px;border-radius:999px;background:#5CA85C;"></span></div>
+          <div style="background:#16150F;padding:20px;min-height:360px;color:#ECE7D9;">
+            <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:16px;">
+              <div style="font-family:'Bricolage Grotesque';font-weight:700;font-size:20px;letter-spacing:-.02em;">Library</div>
+              <div style="display:flex;gap:6px;"><span style="font-family:'JetBrains Mono',monospace;font-size:11px;background:#E64A2E;color:#fff;padding:3px 9px;border-radius:7px;">frames</span><span style="font-family:'JetBrains Mono',monospace;font-size:11px;background:#26241C;color:#9A9486;padding:3px 9px;border-radius:7px;">clips</span><span style="font-family:'JetBrains Mono',monospace;font-size:11px;background:#26241C;color:#9A9486;padding:3px 9px;border-radius:7px;">audio</span></div>
+            </div>
+            <div style="display:flex;align-items:center;gap:10px;background:#211F18;border:1px solid #2f2c22;border-radius:10px;padding:9px 13px;margin-bottom:16px;"><span style="font-family:'JetBrains Mono',monospace;font-size:12px;color:#5f5b4d;">/</span><span style="font-size:13px;color:#8E897A;">search asset labels…</span></div>
+            <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:10px;">
+              <div style="aspect-ratio:1;border-radius:9px;background:linear-gradient(135deg,#E64A2E,#8a2c19);"></div>
+              <div style="aspect-ratio:1;border-radius:9px;background:linear-gradient(135deg,#3E6B3A,#1f3a1c);"></div>
+              <div style="aspect-ratio:1;border-radius:9px;background:linear-gradient(135deg,#34606F,#1c333b);"></div>
+              <div style="aspect-ratio:1;border-radius:9px;background:linear-gradient(135deg,#9A6B16,#5a3e0c);"></div>
+              <div style="aspect-ratio:1;border-radius:9px;background:linear-gradient(135deg,#56523f,#2a2820);"></div>
+              <div style="aspect-ratio:1;border-radius:9px;background:linear-gradient(135deg,#C13A1F,#6e2011);"></div>
+              <div style="aspect-ratio:1;border-radius:9px;background:linear-gradient(135deg,#2c5128,#16280f);"></div>
+              <div style="aspect-ratio:1;border-radius:9px;background:linear-gradient(135deg,#3a352a,#211f18);display:flex;align-items:center;justify-content:center;font-family:'JetBrains Mono',monospace;font-size:18px;color:#5f5b4d;">.*</div>
+            </div>
+            <div style="font-family:'JetBrains Mono',monospace;font-size:11px;color:#5f5b4d;margin-top:14px;">37 frames · 8 clips · 3 audio · from 4 breakdowns</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- footer -->
+  <div style="margin-top:96px;padding-top:28px;border-top:1px solid #DED7C6;display:flex;align-items:center;justify-content:space-between;animation:rxUp .6s both;">
+    <span style="font-family:'JetBrains Mono',monospace;font-size:12px;color:#8A8475;"><span style="color:#E64A2E;">/</span>end<span style="color:#E64A2E;">/</span> — project regex brand system</span>
+    <span style="font-family:'JetBrains Mono',monospace;font-size:12px;color:#B7AF9C;">capture light · break down heavy · lose nothing</span>
+  </div>
+
+</div>
+</div>
+</x-dc>
+</body>
+</html>
